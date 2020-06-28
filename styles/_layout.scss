@@ -1,0 +1,379 @@
+html {
+  scroll-behavior: smooth;
+}
+
+// Color
+body,
+p {
+  color: #333333;
+  background-color: $background-color;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  transition: 0.2s ease-in-out 0s;
+
+  &:hover,
+  &:visited {
+    color: #333333;
+    text-decoration: none;
+    transition: 0.2s ease-in-out 0s;
+  }
+}
+
+b,
+strong {
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.8;
+}
+
+a[href*="//"]:not([href*="waltercolindres."]):after, a[href*="mailto"]:after
+{
+  content: url("/outbound-arrow.svg");
+  right: 0;
+  position: relative;
+  top: -0.35em;
+  margin-left: 5px;
+}
+
+hr {
+  background: black;
+}
+
+//Layout
+header,
+main,
+footer {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+header {
+  margin-top: 1em;
+}
+
+footer {
+  text-align: left;
+  margin-bottom: 3em;
+
+  ul {
+    list-style: none;
+    margin: 1.5em 0;
+  }
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  .submenu {
+    display: none;
+  }
+}
+
+ul {
+  list-style: square;
+  list-style-position: outside;
+  margin: 0 0 0 1.25em;
+  padding: 0;
+}
+
+//Pagination
+.nextprev {
+  border-top: 4px solid black;
+  display: flex;
+  margin: 0 0 2em 0;
+  padding-top: 2em;
+
+  .prev {
+    flex: 3;
+  }
+
+  .next {
+    float: right;
+    flex: 3;
+    text-align: right;
+  }
+
+  .index {
+    margin: 0 auto;
+    flex: 3;
+    text-align: center;
+  }
+}
+
+//Footer Styling
+.copyright {
+  font-size: 0.75em;
+}
+
+//Utility
+hr {
+  border: 0;
+  height: 1px;
+}
+
+.projects-list {
+  margin: 2em 0;
+
+  li {
+    margin: 0.25em 0;
+  }
+}
+
+.reviews-image {
+  border: 1px solid #e0e0e0;
+  margin: 0 auto 2em;
+  border-radius: 5px;
+  display: block;
+}
+
+#footnotes {
+  border-top: 4px solid black;
+
+  ol {
+    margin: 2em 0;
+    font-size: 80%;
+
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.gifffer-play-button {
+  &:hover {
+    background-color: rgba(255, 0, 0, 0.8) !important;
+    transition: 0.2s ease-in-out 0s;
+  }
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  margin-bottom: 2em;
+  border: 1px solid #e0e0e0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+//Typography and Icons
+// http://google.github.io/material-design-icons/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: $background-color;
+  z-index: 1;
+  border-bottom: 4px solid black;
+}
+
+.sticky h1 {
+  margin-bottom: 0.5em;
+}
+
+nav.breadcrumb {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1.5em;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+
+  ul li {
+    font-size: 80%;
+  }
+
+  ul li a {
+    display: inline-block;
+  }
+
+  ul li a::after {
+    content: "" !important;
+    margin: 0;
+  }
+
+  ul li::after {
+    content: "/" !important;
+    top: -0.05em;
+  }
+
+  ul li:last-of-type::after {
+    content: "" !important;
+  }
+}
+
+img {
+  box-sizing: border-box;
+}
+
+.mY2 {
+  margin: 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.mt1 {
+  margin-top: 1em;
+}
+
+.mt2 {
+  margin-top: 2em;
+}
+
+.mb1 {
+  margin-bottom: 1em;
+}
+
+.mb2 {
+  margin-bottom: 2em;
+}
+
+p + h2,
+p + h3 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+footer button.scroll-arrow {
+  position: fixed;
+  z-index: 10;
+  background-color: black;
+  color: white;
+  bottom: 10px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out 0s;
+  visibility: hidden;
+  border: 2px solid white;
+  right: 5%;
+
+  span {
+    transform: rotate(90deg);
+    display: inline-block;
+    right: -1px;
+    position: relative;
+    line-height: 18px;
+  }
+
+  &.visible {
+    visibility: visible;
+    animation-duration: 0.75s;
+    animation-name: popin;
+  }
+
+  &.invisible {
+    animation-duration: 0.75s;
+    animation-name: popout;
+  }
+
+  &:hover {
+    background-color: $brand-color;
+    color: black;
+  }
+}
+
+@keyframes popin {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes popout {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+footer hr {
+  border: 0;
+  height: 4px;
+}
+
+.intro {
+  border-bottom: 4px solid black;
+}
+
+.text {
+  margin-bottom: 2em;
+}
+
+#_progress {
+  --scroll: 0%;
+  background: linear-gradient(
+    to right,
+    $brand-color var(--scroll),
+    transparent 0
+  );
+  // position: fixed;
+  width: 100%;
+  height: 5px;
+  top: 0px;
+  z-index: 100;
+  margin-bottom: 1px;
+}

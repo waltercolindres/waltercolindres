@@ -1,26 +1,25 @@
 import Head from "next/head";
 import Footer from "components/footer";
 
-function Layout(props, { preview }) {
-  console.log("propssssss");
-  console.log(props);
+function Layout({ preview, children }) {
+  console.log(children);
 
-  const navProviders = props.navProviders;
-  const navPatients = props.navPatients;
-  const navLegal = props.navLegal;
-  const navSocial = props.navSocial;
+  // const navProviders = props.navProviders;
+  // const navPatients = props.navPatients;
+  // const navLegal = props.navLegal;
+  // const navSocial = props.navSocial;
 
   return (
     <>
       <Head></Head>
       <div preview={preview ? false : undefined}>
-        {props.children}
-        <Footer
-          navProviders={navProviders}
-          navPatients={navPatients}
-          navLegal={navLegal}
-          navSocial={navSocial}
-        />
+        {children}
+        {/* <Footer
+        // navProviders={navProviders}
+        // navPatients={navPatients}
+        // navLegal={navLegal}
+        // navSocial={navSocial}
+        /> */}
       </div>
     </>
   );

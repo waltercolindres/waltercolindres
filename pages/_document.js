@@ -17,7 +17,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Rufina:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&display=swap"
             rel="stylesheet"
           />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
