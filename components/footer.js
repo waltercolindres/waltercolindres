@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SITE_TITLE } from "utils/configs";
 
-function Footer({ navProviders, navPatients, navLegal, navSocial }) {
+function Footer() {
   let date = new Date().getFullYear();
 
   return (
