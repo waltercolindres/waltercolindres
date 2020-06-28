@@ -2,9 +2,9 @@ import PostPreview from "./post-preview";
 
 export default function AllPosts({ posts }) {
   return (
-    <section>
+    <section className="projects-list">
       <h2>Posts</h2>
-      <div>
+      <ul>
         {posts.map((post) => (
           <PostPreview
             key={post.slug}
@@ -16,7 +16,7 @@ export default function AllPosts({ posts }) {
             // excerpt={post.excerpt}
           />
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

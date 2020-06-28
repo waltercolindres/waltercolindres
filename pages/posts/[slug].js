@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import ErrorPage from "next/error";
+import Header from "components/header";
 import Layout from "../../components/layout";
 import {
   getAllPostsWithSlug,
@@ -16,24 +17,27 @@ export default function Post({ post, preview }) {
   }
 
   return (
-    <Layout preview={preview}>
-      {router.isFallback ? (
-        <>Loading…</>
-      ) : (
-        <>
-          <article>
-            <Head>
-              <title>
-                {post.title} | {SITE_TITLE}
-              </title>
-              {/* <meta property="og:image" content={post.coverImage.url} /> */}
-            </Head>
+    <>
+      <Header />
+      <Layout preview={preview}>
+        {router.isFallback ? (
+          <>Loading…</>
+        ) : (
+          <>
+            <article>
+              <Head>
+                <title>
+                  {post.title} | {SITE_TITLE}
+                </title>
+                {/* <meta property="og:image" content={post.coverImage.url} /> */}
+              </Head>
 
-            {post.title}
-          </article>
-        </>
-      )}
-    </Layout>
+              {post.title}
+            </article>
+          </>
+        )}
+      </Layout>
+    </>
   );
 }
 

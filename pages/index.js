@@ -7,6 +7,17 @@ function Index({ preview, allPosts }) {
   return (
     <>
       <Layout preview={preview}>
+        <div className="intro">
+          <h1>
+            Currently the Product &amp; Experience Practice for the rbi
+            portfolio (Burger King, Popeyes, Tim Hortons).
+          </h1>
+
+          <p>
+            Formerly Sonic Drive-In - Digital Team, Old Hat Creative, QuiBids,
+            Archer Education.
+          </p>
+        </div>
         <AllPosts posts={posts} />
       </Layout>
     </>
@@ -15,16 +26,8 @@ function Index({ preview, allPosts }) {
 export default Index;
 
 export async function getStaticProps({ preview = false }) {
-  // if (preview) {
   const allPosts = await getAllPostsForHome(preview);
   return {
     props: { preview, allPosts },
   };
-  // } else {
-  //   const page = await getAllPostsForHome(preview);
-  //   return {
-  //     props: { preview, page },
-  //     // props: { preview, page, navProviders, navPatients, navLegal, navSocial },
-  //   };
-  // }
 }

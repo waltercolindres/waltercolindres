@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Footer from "components/footer";
+import Header from "components/header";
+import Footer from "components/Footer";
 
 function Layout({ preview, children }) {
   console.log(children);
@@ -12,15 +13,11 @@ function Layout({ preview, children }) {
   return (
     <>
       <Head></Head>
-      <div preview={preview ? false : undefined}>
+      <Header />
+      <div preview={preview ? false : undefined} className="main">
         {children}
-        {/* <Footer
-        // navProviders={navProviders}
-        // navPatients={navPatients}
-        // navLegal={navLegal}
-        // navSocial={navSocial}
-        /> */}
       </div>
+      <Footer />
     </>
   );
 }
