@@ -1,9 +1,11 @@
 import Layout from "components/layout";
 import AllPosts from "components/all-posts";
-import { getAllPostsForHome } from "utils/contentful";
+import AllSections from "components/all-sections";
+import { getAllPostsForHome, getAllPostsTypesForHome } from "utils/contentful";
 
 function Index({ preview, allPosts }) {
   const posts = allPosts;
+  console.log(posts);
   return (
     <>
       <Layout preview={preview}>
@@ -18,7 +20,8 @@ function Index({ preview, allPosts }) {
             Archer Education.
           </p>
         </div>
-        <AllPosts posts={posts} />
+        {/* <AllPosts posts={posts} /> */}
+        <AllSections posts={posts} />
       </Layout>
     </>
   );
@@ -26,7 +29,10 @@ function Index({ preview, allPosts }) {
 export default Index;
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = await getAllPostsForHome(preview);
+  const allPosts = await getAllPostsTypesForHome(preview);
+  // console.log("==================");
+  // console.log(allPosts);
+  // console.log("*****************");
   return {
     props: { preview, allPosts },
   };

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function PostPreview({ title, excerpt, slug }) {
+export default function PostPreview({ title, slug }) {
   return (
     <li>
       <Link as={`/posts/${slug}`} href="/posts/[slug]">

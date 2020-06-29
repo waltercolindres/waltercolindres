@@ -5,14 +5,14 @@ function Footer() {
   let date = new Date().getFullYear();
 
   return (
-    <footer class="footer" role="contentinfo">
-      <button class="scroll-arrow" id="arrow" onclick="scrollZero();">
+    <footer className="footer" role="contentinfo">
+      {/* <button className="scroll-arrow" id="arrow" onclick="scrollZero();">
         <span>&lt;</span>
-      </button>
+      </button> */}
       <hr />
 
       <div role="navigation">
-        <h3 class="mt2">Site Navigation</h3>
+        <h3 className="mt2">Site Navigation</h3>
         <ul>
           <li>
             <a href="/">Home</a>
@@ -38,7 +38,7 @@ function Footer() {
         </ul>
       </div>
 
-      <div class="copyright">
+      <div className="copyright">
         <div>{SITE_TITLE}</div>
         <div>MGA / OKC / MIA</div>
         <div> © 1981 - {date}</div>

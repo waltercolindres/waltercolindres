@@ -12,6 +12,38 @@ const previewClient = require("contentful").createClient({
 
 const getClient = (preview) => (preview ? previewClient : client);
 
+export async function getAllPostsTypesForHome(preview) {
+  const thoughts = await client.getEntries({
+    content_type: "post",
+    order: "sys.createdAt",
+    "fields.postType": "Thoughts",
+  });
+
+  const uxPatterns = await client.getEntries({
+    content_type: "post",
+    order: "sys.createdAt",
+    "fields.postType": "UX Patterns",
+  });
+
+  const caseStudies = await client.getEntries({
+    content_type: "post",
+    order: "sys.createdAt",
+    "fields.postType": "Case Studies",
+  });
+
+  const reviews = await client.getEntries({
+    content_type: "post",
+    order: "sys.createdAt",
+    "fields.postType": "Reviews",
+  });
+  return {
+    Thoughts: parsePostEntries(thoughts),
+    "Case Studies": parsePostEntries(caseStudies),
+    "UX Patterns": parsePostEntries(uxPatterns),
+    Reviews: parsePostEntries(reviews),
+  };
+}
+
 export async function getAllPostsForHome(preview) {
   const entries = await client.getEntries({
     content_type: "post",

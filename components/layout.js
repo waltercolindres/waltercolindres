@@ -3,8 +3,6 @@ import Header from "components/header";
 import Footer from "components/footer";
 
 function Layout({ preview, children }) {
-  console.log(children);
-
   // const navProviders = props.navProviders;
   // const navPatients = props.navPatients;
   // const navLegal = props.navLegal;
