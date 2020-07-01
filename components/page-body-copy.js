@@ -1,13 +1,18 @@
-function PageBodyCopy({ section }) {
-  console.log(section);
-  return (
-    <div className="container m0a">
-      <p className="my4">{section.pageBodyCopy}</p>
-      <style jsx>{`
-        max-width: 1080px;
-      `}</style>
-    </div>
-  );
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+function PageBodyCopy({ content }) {
+  console.log("conten");
+  console.log(content);
+  console.log("conten");
+  // debugger;
+
+  let x;
+
+  if (content) {
+    return (x = documentToReactComponents(content.content));
+  }
+
+  return <div className="text">{x}</div>;
 }
 
 export default PageBodyCopy;

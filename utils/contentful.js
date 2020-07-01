@@ -57,7 +57,7 @@ function parsePost({ fields }) {
     title: fields.title,
     slug: fields.slug,
     // date: fields.date,
-    // content: fields.content,
+    content: fields.content || null,
     // excerpt: fields.excerpt,
     // coverImage: fields.coverImage.fields.file,
     // author: parseAuthor(fields.author),

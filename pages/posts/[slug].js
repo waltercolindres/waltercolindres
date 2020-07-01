@@ -3,6 +3,7 @@ import Head from "next/head";
 import ErrorPage from "next/error";
 import Header from "components/header";
 import Layout from "../../components/layout";
+import PageBodyCopy from "components/page-body-copy";
 import {
   getAllPostsWithSlug,
   getPostAndMorePosts,
@@ -10,6 +11,7 @@ import {
 import { SITE_TITLE } from "../../utils/configs";
 
 export default function Post({ post, preview }) {
+  console.log(post.content[0].fields.pageBodyContent.content);
   const router = useRouter();
 
   if (!router.isFallback && !post) {
@@ -31,7 +33,15 @@ export default function Post({ post, preview }) {
                 {/* <meta property="og:image" content={post.coverImage.url} /> */}
               </Head>
 
-              {post.title}
+              <div className="sticky">
+                <h1>{post.title}</h1>
+              </div>
+
+              <div className="mY2">META</div>
+
+              <PageBodyCopy
+                content={post.content[0].fields.pageBodyContent.content}
+              />
             </article>
           </>
         )}
