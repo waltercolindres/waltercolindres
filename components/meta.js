@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import Head from "next/head";
 import { TWITTER_CREATOR, TWITTER_SITE } from "utils/configs";
 
