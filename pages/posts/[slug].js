@@ -12,13 +12,7 @@ import { SITE_TITLE } from "../../utils/configs";
 import Breadcrumbs from "components/breadcrumbs";
 
 export default function Post({ post, preview }) {
-  console.log("post");
-  console.log(post);
-  console.log("post");
-
-  debugger;
-
-  console.log(post.content[0].fields.pageBodyContent.content);
+  // console.log(post.content[0].fields.pageBodyContent.content);
   const router = useRouter();
 
   const content = post.content[0].fields.pageBodyContent.content;
@@ -94,10 +88,6 @@ export default function Post({ post, preview }) {
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview);
-
-  console.log("data");
-  console.log(data);
-  console.log("data");
 
   return {
     props: {
