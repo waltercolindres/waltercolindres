@@ -11,7 +11,7 @@ import { SITE_TITLE } from "../../utils/configs";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
-  const content;
+  let content;
 
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
