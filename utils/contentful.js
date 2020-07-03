@@ -12,6 +12,7 @@ const previewClient = require("contentful").createClient({
 
 const getClient = (preview) => (preview ? previewClient : client);
 
+//GET ALL POSTS
 export async function getAllPostsTypesForHome(preview) {
   const thoughts = await client.getEntries({
     content_type: "post",
@@ -44,23 +45,24 @@ export async function getAllPostsTypesForHome(preview) {
   };
 }
 
-export async function getAllPostsForHome(preview) {
-  const entries = await client.getEntries({
-    content_type: "post",
-    order: "sys.createdAt",
-  });
-  return parsePostEntries(entries);
-}
+// export async function getAllPostsForHome(preview) {
+//   const entries = await client.getEntries({
+//     content_type: "post",
+//     order: "sys.createdAt",
+//   });
+//   return parsePostEntries(entries);
+// }
 
 function parsePost({ fields }) {
+  console.log("sdsdssdsdsdsdssd");
+  console.log(fields);
+  console.log("sdsdssdsdsdsdssd");
   return {
     title: fields.title,
     slug: fields.slug,
     // date: fields.date,
     content: fields.content || null,
     // excerpt: fields.excerpt,
-    // coverImage: fields.coverImage.fields.file,
-    // author: parseAuthor(fields.author),
   };
 }
 
@@ -78,12 +80,17 @@ export async function getPostAndMorePosts(slug, preview) {
     limit: 1,
     "fields.slug[in]": slug,
   });
+
   // const entries = await getClient(preview).getEntries({
   //   content_type: "post",
   //   limit: 2,
-  //   order: "-fields.date",
+  //   // order: "-fields.date",
   //   "fields.slug[nin]": slug,
   // });
+
+  console.log("[]][[[[[[[[[[[[[");
+  console.log(parsePostEntries(entry)[0]);
+  console.log("[]][[[[[[[[[[[[[");
 
   return {
     post: parsePostEntries(entry)[0],

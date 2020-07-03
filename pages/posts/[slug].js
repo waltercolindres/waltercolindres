@@ -11,8 +11,13 @@ import {
 import { SITE_TITLE } from "../../utils/configs";
 
 export default function Post({ post, preview }) {
+  console.log("post");
+  console.log(post);
+  console.log("post");
   console.log(post.content[0].fields.pageBodyContent.content);
   const router = useRouter();
+
+  const content = post.content[0].fields.pageBodyContent.content;
 
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
@@ -39,9 +44,7 @@ export default function Post({ post, preview }) {
 
               <div className="mY2">META</div>
 
-              <PageBodyCopy
-                content={post.content[0].fields.pageBodyContent.content}
-              />
+              <PageBodyCopy content={content} />
             </article>
           </>
         )}
@@ -52,6 +55,10 @@ export default function Post({ post, preview }) {
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview);
+
+  console.log("data");
+  console.log(data);
+  console.log("data");
 
   return {
     props: {
