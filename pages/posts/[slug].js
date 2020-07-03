@@ -1,13 +1,11 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import ErrorPage from "next/error";
-import Layout from "../../components/layout";
+import Breadcrumbs from "components/breadcrumbs";
+import Layout from "components/layout";
 import PageBodyCopy from "components/page-body-copy";
-import {
-  getAllPostsWithSlug,
-  getPostAndMorePosts,
-} from "../../utils/contentful";
-import { SITE_TITLE } from "../../utils/configs";
+import { getAllPostsWithSlug, getPostAndMorePosts } from "utils/contentful";
+import { SITE_TITLE } from "utils/configs";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -38,7 +36,7 @@ export default function Post({ post, preview }) {
 
               <div className="sticky">
                 <h1>{post.title}</h1>
-                {/* <Breadcrumbs title={post.title} /> */}
+                <Breadcrumbs title={post.title} />
               </div>
 
               <div className="mY2">META</div>

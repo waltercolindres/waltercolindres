@@ -3,46 +3,46 @@ import { SITE_TITLE } from "utils/configs";
 function Footer() {
   let date = new Date().getFullYear();
 
-  // const scrollTop = () => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // };
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
-  // if (typeof window !== "undefined" && typeof document !== "undefined") {
-  //   function debounce(func, wait, immediate) {
-  //     var timeout;
-  //     return function () {
-  //       var context = this,
-  //         args = arguments;
-  //       var later = function () {
-  //         timeout = null;
-  //         if (!immediate) func.apply(context, args);
-  //       };
-  //       var callNow = immediate && !timeout;
-  //       clearTimeout(timeout);
-  //       timeout = setTimeout(later, wait);
-  //       if (callNow) func.apply(context, args);
-  //     };
-  //   }
+  if (typeof window !== "undefined" && typeof document !== "undefined") {
+    function debounce(func, wait, immediate) {
+      var timeout;
+      return function () {
+        var context = this,
+          args = arguments;
+        var later = function () {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
 
-  //   window.addEventListener("scroll", debounce(showScrollTopButton, 10), false);
+    window.addEventListener("scroll", debounce(showScrollTopButton, 10), false);
 
-  //   var scrollButton = document.getElementById("arrow");
-  //   const offSet = 200;
+    var scrollButton = document.getElementById("arrow");
+    const offSet = 200;
 
-  //   function showScrollTopButton() {
-  //     if (window.scrollY > offSet) {
-  //       scrollButton.classList.add("visible");
-  //     } else if (window.scrollY < offSet) {
-  //       scrollButton.classList.remove("visible");
-  //     }
-  //   }
-  // }
+    function showScrollTopButton() {
+      if (window.scrollY > offSet) {
+        scrollButton.classList.add("visible");
+      } else if (window.scrollY < offSet) {
+        scrollButton.classList.remove("visible");
+      }
+    }
+  }
 
   return (
     <footer className="footer" role="contentinfo">
-      {/* <button className="scroll-arrow" id="arrow" onClick={scrollTop}>
+      <button className="scroll-arrow" id="arrow" onClick={scrollTop}>
         <span>&lt;</span>
-      </button> */}
+      </button>
       <hr />
 
       <div role="navigation">

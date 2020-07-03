@@ -6,7 +6,7 @@ function PageBodyCopy({ content }) {
   // https://github.com/contentful/rich-text/issues/61
   // https://github.com/contentful/rich-text/issues/88
 
-  const renderImages = {
+  const renderContent = {
     renderNode: {
       "embedded-asset-block": (node) => {
         const file = node.data.target.fields.file.url;
@@ -43,9 +43,8 @@ function PageBodyCopy({ content }) {
 
   return (
     <>
-      <Breadcrumbs />
       <div className="text">
-        {documentToReactComponents({ content }, renderImages)}
+        {documentToReactComponents({ content }, renderContent)}
       </div>
       ;
     </>
