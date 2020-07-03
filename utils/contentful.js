@@ -10,8 +10,6 @@ const previewClient = require("contentful").createClient({
   host: "preview.contentful.com",
 });
 
-const getClient = (preview) => (preview ? previewClient : client);
-
 //GET ALL POSTS
 export async function getAllPostsTypesForHome(preview) {
   const thoughts = await client.getEntries({
@@ -44,14 +42,6 @@ export async function getAllPostsTypesForHome(preview) {
     Reviews: parsePostEntries(reviews),
   };
 }
-
-// export async function getAllPostsForHome(preview) {
-//   const entries = await client.getEntries({
-//     content_type: "post",
-//     order: "sys.createdAt",
-//   });
-//   return parsePostEntries(entries);
-// }
 
 function parsePost({ fields }) {
   console.log("sdsdssdsdsdsdssd");

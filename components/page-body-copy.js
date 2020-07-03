@@ -1,7 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Breadcrumbs from "components/breadcrumbs";
-import { getRichTextEntityLinks } from "@contentful/rich-text-links";
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+import { INLINES } from "@contentful/rich-text-types";
 
 function PageBodyCopy({ content }) {
   console.log("content");
