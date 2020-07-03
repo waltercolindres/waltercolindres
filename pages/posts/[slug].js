@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import Head from "next/head";
 import ErrorPage from "next/error";
-import Header from "components/header";
 import Layout from "../../components/layout";
 import PageBodyCopy from "components/page-body-copy";
 import {
@@ -9,7 +8,6 @@ import {
   getPostAndMorePosts,
 } from "../../utils/contentful";
 import { SITE_TITLE } from "../../utils/configs";
-import Breadcrumbs from "components/breadcrumbs";
 
 export default function Post({ post, preview }) {
   // console.log(post.content[0].fields.pageBodyContent.content);

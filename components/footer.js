@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SITE_TITLE } from "utils/configs";
 
 function Footer() {

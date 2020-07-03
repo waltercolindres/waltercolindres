@@ -7,17 +7,6 @@ function PageBodyCopy({ content }) {
   console.log("content");
   console.log(content);
   console.log("content");
-  // debugger;
-
-  // const sectionRendererOptions = {
-  //   renderNode: {
-  //     "embedded-asset-block": (node) => {
-  //       const { file } = node.data.target.fields;
-  //       const { url } = file["en-US"];
-  //       return <img href={url} />;
-  //     },
-  //   },
-  // };
 
   // https://github.com/contentful/rich-text/issues/61
   // https://github.com/contentful/rich-text/issues/88
