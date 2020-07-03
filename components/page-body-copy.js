@@ -2,7 +2,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Breadcrumbs from "components/breadcrumbs";
 import { INLINES } from "@contentful/rich-text-types";
 
-function PageBodyCopy(content) {
+function PageBodyCopy({ content }) {
   // https://github.com/contentful/rich-text/issues/61
   // https://github.com/contentful/rich-text/issues/88
 
@@ -41,14 +41,13 @@ function PageBodyCopy(content) {
 
   let x;
 
-  if (content) {
-    return (x = documentToReactComponents({ content }, renderImages));
-  }
-
   return (
     <>
       <Breadcrumbs />
-      <div className="text">{x}</div>;
+      <div className="text">
+        {documentToReactComponents({ content }, renderImages)}
+      </div>
+      ;
     </>
   );
 }
