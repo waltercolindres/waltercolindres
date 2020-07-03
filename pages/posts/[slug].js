@@ -10,13 +10,15 @@ import {
 import { SITE_TITLE } from "../../utils/configs";
 
 export default function Post({ post, preview }) {
-  // console.log(post.content[0].fields.pageBodyContent.content);
   const router = useRouter();
-
-  const content = post.content[0].fields.pageBodyContent.content;
+  const content;
 
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
+  }
+
+  if (post) {
+    content = post.content[0].fields.pageBodyContent.content;
   }
 
   return (
