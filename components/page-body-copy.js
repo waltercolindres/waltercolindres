@@ -26,7 +26,11 @@ function PageBodyCopy({ content }) {
     renderNode: {
       "embedded-asset-block": (node) => {
         const file = node.data.target.fields.file.url;
-        return <img className="reviews-image" src={file} />;
+        const title = node.data.target.fields.title;
+        const alt = node.data.target.fields.alt;
+        return (
+          <img className="reviews-image" src={file} alt={file} title={title} />
+        );
       },
       [INLINES.HYPERLINK]: (node) => {
         if (node.data.uri.includes("player.vimeo.com/video")) {
@@ -42,12 +46,12 @@ function PageBodyCopy({ content }) {
           );
         }
       },
-      [BLOCKS.PARAGRAPH]: (node, children) =>
-        node.content.some((childNode) => childNode.nodeType === `div`) ? (
-          children
-        ) : (
-          <div className="blogpost-text">{children}</div>
-        ),
+      // [BLOCKS.PARAGRAPH]: (node, children) =>
+      //   node.content.some((childNode) => childNode.nodeType === `p`) ? (
+      //     children
+      //   ) : (
+      //     <div className="blogpost-text">{children}</div>
+      //   ),
     },
   };
 
