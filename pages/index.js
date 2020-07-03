@@ -1,6 +1,6 @@
 import Layout from "components/layout";
 import AllSections from "components/all-sections";
-import { getAllPostsForHome, getAllPostsTypesForHome } from "utils/contentful";
+import { getAllPostsTypesForHome } from "utils/contentful";
 
 function Index({ preview, allPosts }) {
   const posts = allPosts;
