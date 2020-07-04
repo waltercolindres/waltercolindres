@@ -1,5 +1,4 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import Breadcrumbs from "components/breadcrumbs";
 import { INLINES } from "@contentful/rich-text-types";
 
 function PageBodyCopy({ content }) {
@@ -38,8 +37,6 @@ function PageBodyCopy({ content }) {
       //   ),
     },
   };
-
-  let x;
 
   return (
     <>

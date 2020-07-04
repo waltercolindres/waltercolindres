@@ -10,7 +10,7 @@ function Index({ preview, allPosts }) {
       <Layout preview={preview}>
         <div className="intro">
           <h1>
-            Currently the Product &amp; Experience Practice for the rbi
+            Currently leading the Product Experience Practice for the rbi
             portfolio (Burger King, Popeyes, Tim Hortons).
           </h1>
 

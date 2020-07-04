@@ -20,6 +20,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&display=swap"
             rel="stylesheet"
           />
+
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
