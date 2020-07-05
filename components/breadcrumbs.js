@@ -42,10 +42,7 @@ function Breadcrumbs({ title }) {
           <li>
             <a href="/">Home</a>
           </li>
-          <li>
-            <a href="<?= $crumb->url() ?>">{title}</a>
-          </li>
-          {/* <?php endforeach ?> */}
+          <li>&nbsp;{title}</li>
         </ul>
       </nav>
       <div id="_progress"></div>

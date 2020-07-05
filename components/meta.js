@@ -3,7 +3,8 @@ import Head from "next/head";
 import { TWITTER_CREATOR, TWITTER_SITE } from "utils/configs";
 
 function Meta(props) {
-  let meta = props.meta;
+  let meta = props.meta || "null";
+
   return (
     <>
       <Head>

@@ -71,21 +71,3 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
-
-// export async function getStaticPaths() {
-//   const allPosts = await getAllPostsWithSlug();
-
-//   return {
-//     paths: allPosts?.map(({ slug, postType }) => {
-
-//     let transformPostType;
-
-//     if (postType) {
-//       transformPostType = postType.toLowerCase().replace(/\s/g, "");
-//       console.log(transformPostType);
-//     }
-
-//     retun (`/${postType}/${slug}`) ?? [],
-//     fallback: true,}
-//   };
-// }

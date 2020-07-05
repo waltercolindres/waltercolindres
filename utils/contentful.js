@@ -50,6 +50,7 @@ function parsePost({ fields }) {
   return {
     title: fields.title,
     slug: fields.slug,
+    postType: fields.postType,
     // date: fields.date,
     content: fields.content || null,
     // excerpt: fields.excerpt,

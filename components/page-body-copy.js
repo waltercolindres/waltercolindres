@@ -1,5 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { INLINES } from "@contentful/rich-text-types";
+import { INLINES, BLOCKS } from "@contentful/rich-text-types";
 
 function PageBodyCopy({ content }) {
   // https://github.com/contentful/rich-text/issues/61
@@ -15,7 +15,7 @@ function PageBodyCopy({ content }) {
           <img className="reviews-image" src={file} alt={file} title={title} />
         );
       },
-      [INLINES.HYPERLINK]: (node) => {
+      [INLINES.HYPERLINK]: (node, children) => {
         if (node.data.uri.includes("player.vimeo.com/video")) {
           return (
             <div className="videoWrapper">
@@ -27,14 +27,10 @@ function PageBodyCopy({ content }) {
               />
             </div>
           );
+        } else {
+          return <a href={node.data.uri}>{children}</a>;
         }
       },
-      // [BLOCKS.PARAGRAPH]: (node, children) =>
-      //   node.content.some((childNode) => childNode.nodeType === `p`) ? (
-      //     children
-      //   ) : (
-      //     <div className="blogpost-text">{children}</div>
-      //   ),
     },
   };
 
@@ -43,7 +39,6 @@ function PageBodyCopy({ content }) {
       <div className="text">
         {documentToReactComponents({ content }, renderContent)}
       </div>
-      ;
     </>
   );
 }

@@ -55,13 +55,20 @@ figcaption {
  */
 ul,
 ol {
-  margin-left: $spacing-unit;
+  margin-left: 0;
+  padding-left: 20px;
 }
 
 li {
   > ul,
   > ol {
     margin-bottom: 0;
+  }
+}
+
+li {
+  > p {
+    margin: 0;
   }
 }
 

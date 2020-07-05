@@ -117,6 +117,7 @@ ul {
 //Footer Styling
 .copyright {
   font-size: 0.75em;
+  margin-top: 2rem;
 }
 
 //Utility
@@ -220,7 +221,9 @@ h3 {
 }
 
 .sticky h1 {
+  padding-top: 0.67em;
   margin-bottom: 0.5em;
+  margin-top: 0;
 }
 
 nav.breadcrumb {
@@ -293,7 +296,6 @@ footer button.scroll-arrow {
   position: fixed;
   z-index: 10;
   background-color: black;
-  color: white;
   bottom: 10px;
   height: 40px;
   width: 40px;
@@ -302,14 +304,10 @@ footer button.scroll-arrow {
   transition: all 0.2s ease-in-out 0s;
   visibility: hidden;
   border: 2px solid white;
-  right: 5%;
+  right: 6%;
 
-  span {
-    transform: rotate(90deg);
-    display: inline-block;
-    right: -1px;
-    position: relative;
-    line-height: 18px;
+  svg {
+    fill: white;
   }
 
   &.visible {
@@ -325,7 +323,10 @@ footer button.scroll-arrow {
 
   &:hover {
     background-color: $brand-color;
-    color: black;
+    transform: scale(1.5);
+    svg {
+      fill: black;
+    }
   }
 }
 
