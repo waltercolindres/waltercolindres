@@ -15,25 +15,25 @@ export async function getAllPostsTypesForHome(preview) {
   const thoughts = await client.getEntries({
     content_type: "post",
     order: "sys.createdAt",
-    "fields.postType": "Thoughts",
+    "fields.postType": "thoughts",
   });
 
   const uxPatterns = await client.getEntries({
     content_type: "post",
     order: "sys.createdAt",
-    "fields.postType": "UX Patterns",
+    "fields.postType": "ux-patterns",
   });
 
   const caseStudies = await client.getEntries({
     content_type: "post",
     order: "sys.createdAt",
-    "fields.postType": "Case Studies",
+    "fields.postType": "case-studies",
   });
 
   const reviews = await client.getEntries({
     content_type: "post",
     order: "sys.createdAt",
-    "fields.postType": "Reviews",
+    "fields.postType": "reviews",
   });
   return {
     Thoughts: parsePostEntries(thoughts),

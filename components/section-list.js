@@ -1,7 +1,6 @@
 import PostPreview from "./post-preview";
 
 export default function SectionList({ posts, title, postType }) {
-  console.log(postType);
   return (
     <div className="projects-list">
       <h2>{title}</h2>

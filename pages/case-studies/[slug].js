@@ -67,25 +67,7 @@ export async function getStaticProps({ params, preview = false }) {
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug();
   return {
-    paths: allPosts?.map(({ slug, postType }) => `/${postType}/${slug}`) ?? [],
+    paths: allPosts?.map(({ slug }) => `/case-studies/${slug}`) ?? [],
     fallback: true,
   };
 }
-
-// export async function getStaticPaths() {
-//   const allPosts = await getAllPostsWithSlug();
-
-//   return {
-//     paths: allPosts?.map(({ slug, postType }) => {
-
-//     let transformPostType;
-
-//     if (postType) {
-//       transformPostType = postType.toLowerCase().replace(/\s/g, "");
-//       console.log(transformPostType);
-//     }
-
-//     retun (`/${postType}/${slug}`) ?? [],
-//     fallback: true,}
-//   };
-// }
