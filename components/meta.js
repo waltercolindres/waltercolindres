@@ -26,7 +26,10 @@ function Meta(props) {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="waltercolindres.com" />
-        <meta property="og:image" content="waltercolindres.com/mio-4.png" />
+        <meta
+          property="og:image"
+          content="http://waltercolindres.com/mio-4.png"
+        />
         <meta
           property="og:image:width"
           content={meta.siteOgImageWidth || "200"}
@@ -48,7 +51,10 @@ function Meta(props) {
           name="twitter:description"
           content="Walter Colindres - Product Experience Leader"
         />
-        <meta name="twitter:image" content="waltercolindres.com/mio-4.png" />
+        <meta
+          name="twitter:image"
+          content="http://waltercolindres.com/mio-4.png"
+        />
       </Head>
     </>
   );
