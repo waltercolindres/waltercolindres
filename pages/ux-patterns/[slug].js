@@ -6,7 +6,7 @@ import Layout from "components/layout";
 import PageBodyCopy from "components/page-body-copy";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "utils/contentful";
 import { SITE_TITLE } from "utils/configs";
-import Meta from "components/meta";
+import PostMeta from "components/post-meta";
 
 export default function Post({ post, preview }) {
   console.log(post);
@@ -24,7 +24,6 @@ export default function Post({ post, preview }) {
 
   return (
     <>
-      {/* <Meta meta={post} /> */}
       <Layout preview={preview}>
         {router.isFallback ? (
           <>Loading…</>
@@ -37,12 +36,15 @@ export default function Post({ post, preview }) {
                 </title>
               </Head>
 
-              <div className="sticky">
-                <h1>{post.title}</h1>
-                <Breadcrumbs title={post.title} />
-              </div>
+              <h1 className="mb0">{post.title}</h1>
+              <PostMeta
+                createdDate={post.content[0].sys.createdAt}
+                updatedDate={post.content[0].sys.updatedAt}
+              />
 
-              <div className="mY2">META</div>
+              <div className="sticky">
+                <Breadcrumbs title={post.title} postType={post.postType} />
+              </div>
 
               <PageBodyCopy content={content} />
             </article>

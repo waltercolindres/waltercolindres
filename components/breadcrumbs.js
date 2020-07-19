@@ -1,4 +1,12 @@
-function Breadcrumbs({ title }) {
+import Link from "next/link";
+
+function Breadcrumbs({ title, postType }) {
+  let transformPostType;
+
+  if (postType) {
+    transformPostType = postType.replace(/-/g, " ");
+  }
+
   if (typeof window !== "undefined" && typeof document !== "undefined") {
     function debounce(func, wait, immediate) {
       var timeout;
@@ -41,6 +49,12 @@ function Breadcrumbs({ title }) {
         <ul>
           <li>
             <a href="/">Home</a>
+          </li>
+          <li>
+            &nbsp;
+            <Link as={`/${postType}`} href={`/[postType]`}>
+              <a>{transformPostType}</a>
+            </Link>
           </li>
           <li>&nbsp;{title}</li>
         </ul>

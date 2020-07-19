@@ -38,8 +38,55 @@ export async function getAllPostsTypesForHome(preview) {
   return {
     Thoughts: parsePostEntries(thoughts),
     "Case Studies": parsePostEntries(caseStudies),
-    "UX Patterns": parsePostEntries(uxPatterns),
     Reviews: parsePostEntries(reviews),
+    "UX Patterns": parsePostEntries(uxPatterns),
+  };
+}
+
+export async function getAllThoughts(preview) {
+  const thoughts = await client.getEntries({
+    content_type: "post",
+    order: "sys.createdAt",
+    "fields.postType": "thoughts",
+  });
+
+  return {
+    Thoughts: parsePostEntries(thoughts),
+  };
+}
+
+export async function getAllReviews(preview) {
+  const reviews = await client.getEntries({
+    content_type: "post",
+    order: "sys.createdAt",
+    "fields.postType": "reviews",
+  });
+  return {
+    Reviews: parsePostEntries(reviews),
+  };
+}
+
+export async function getAllCaseStudies(preview) {
+  const caseStudies = await client.getEntries({
+    content_type: "post",
+    order: "sys.createdAt",
+    "fields.postType": "case-studies",
+  });
+
+  return {
+    "Case Studies": parsePostEntries(caseStudies),
+  };
+}
+
+export async function getAllUXPatterns(preview) {
+  const uxPatterns = await client.getEntries({
+    content_type: "post",
+    order: "sys.createdAt",
+    "fields.postType": "ux-patterns",
+  });
+
+  return {
+    "UX Patterns": parsePostEntries(uxPatterns),
   };
 }
 
