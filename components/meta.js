@@ -8,64 +8,47 @@ function Meta(props) {
   return (
     <>
       <Head>
-        <title>{meta.siteTitle || "test title inline"}</title>
+        <title>Walter Colindres - Product Experience Leader</title>
         <meta
           name="description"
-          content={meta.siteDescription || "test title inline"}
+          content="Walter Colindres - Product Experience Leader"
         />
         <meta
           name="keywords"
-          content={meta.siteKeywords || "test title inline"}
+          content="product, experience, design, website, product management"
         />
-
         {/* https://ogp.me/ */}
-        <meta
-          property="og:site_name"
-          content={meta.siteTitle || "test title inline"}
-        />
+        <meta property="og:site_name" content="Walter Colindres" />
         <meta
           property="og:title"
-          content={meta.siteOgTitle || "test title inline"}
+          content="Walter Colindres - Product Experience Leader"
+        />
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={meta.siteUrl || "test title inline"} />
-        <meta
-          property="og:image"
-          content={meta.siteOgImageUrl || "test title inline"}
-        />
+        <meta property="og:url" content="waltercolindres.com" />
+        <meta property="og:image" content="waltercolindres.com/mio-4.png" />
         <meta
           property="og:image:width"
           content={meta.siteOgImageWidth || "200"}
         />
         <meta
           property="og:image:height"
-          content={meta.siteOgImageHeight || "300"}
+          content={meta.siteOgImageHeight || "200"}
         />
-
         {/* https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={TWITTER_SITE} />
-        <meta
-          name="twitter:site"
-          content={meta.siteUrl || "test title inline"}
-        />
+        <meta name="twitter:site" content="waltercolindres.com" />
         <meta name="twitter:creator" content={TWITTER_CREATOR} />
         <meta
           name="twitter:title"
-          content={meta.siteTwitterTitle || "test title inline"}
+          content="Walter Colindres - Product Experience Leader"
         />
         <meta
           name="twitter:description"
-          content={meta.siteTwitterDescription || "test title inline"}
+          content="Walter Colindres - Product Experience Leader"
         />
-        <meta
-          name="twitter:image"
-          content={meta.siteTwitterImageUrl || "test title inline"}
-        />
-        <meta
-          name="twitter:image:alt"
-          content={meta.siteTwitterImageAltTag || "test title inline"}
-        />
+        <meta name="twitter:image" content="waltercolindres.com/mio-4.png" />
       </Head>
     </>
   );
