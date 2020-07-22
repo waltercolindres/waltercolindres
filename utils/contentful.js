@@ -100,7 +100,7 @@ function parsePost({ fields }) {
     postType: fields.postType,
     // date: fields.date,
     content: fields.content || null,
-    // excerpt: fields.excerpt,
+    excerpt: fields.excerpt || null,
   };
 }
 

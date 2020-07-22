@@ -47,6 +47,7 @@ export default function Post({ post, preview }) {
                   name="description"
                   content="Walter Colindres - Product Experience Leader"
                 />
+                <meta property="og:url" content="waltercolindres.com" />
                 <meta
                   property="og:image"
                   content="http://waltercolindres.com/mio-4.png"

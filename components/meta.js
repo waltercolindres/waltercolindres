@@ -11,7 +11,7 @@ function Meta(props) {
         <title>Walter Colindres - Product Experience Leader</title>
         <meta
           name="description"
-          content="Walter Colindres - Product Experience Leader"
+          content="Thoughts and Reviews that center around Product Experience and sometimes life."
         />
         <meta
           name="keywords"
