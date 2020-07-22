@@ -239,7 +239,7 @@ h3 {
 nav.breadcrumb {
   display: inline-block;
   position: relative;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 
   ul {
     padding: 0;
@@ -409,3 +409,131 @@ footer hr {
   z-index: 100;
   margin-bottom: 1px;
 }
+
+.profile-pic-wrapper {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 133px;
+  position: absolute;
+  left: -56%;
+  right: 0;
+  top: -24px;
+  bottom: 0;
+  display: inline-table;
+}
+
+@media (prefers-color-scheme: dark) {
+  body,
+  p {
+    color: #ffffff;
+    background-color: #000000;
+  }
+
+  a {
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+
+    &:hover,
+    &:visited {
+      color: #fff;
+    }
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #ffffff;
+  }
+
+  a {
+    color: $brand-color;
+    text-shadow: 0 2px #000000;
+
+    &:visited {
+      color: $brand-color;
+    }
+
+    &:hover {
+      color: $text-color;
+      text-decoration: underline;
+      background-color: $brand-color;
+      text-shadow: none;
+    }
+  }
+
+  .intro {
+    border-bottom: 4px solid #ffffff;
+  }
+
+  a[href*="//"]:not([href*="waltercolindres."]):after, a[href*="mailto"]:after
+  {
+    content: url("/outbound-arrow-white.svg");
+  }
+
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #000000;
+    z-index: 1;
+    border-bottom: 4px solid #ffffff;
+  }
+
+  .projects-list {
+    border-bottom: 1px solid #ffffff;
+  }
+
+  footer svg path {
+    fill: white;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  // .day.light-scheme {
+  //   background: white;
+  //   color: #555;
+  // }
+  // .night.light-scheme {
+  //   background: #eee;
+  //   color: black;
+  // }
+
+  body,
+  p {
+    color: #333333;
+    background-color: $background-color;
+  }
+
+  a {
+    color: #333333;
+    border-bottom: 1px solid #000;
+
+    &:hover,
+    &:visited {
+      color: #333333;
+    }
+  }
+}
+
+// body,
+// p {
+//   color: #333333;
+//   background-color: $background-color;
+// }
+
+// a {
+//   color: #333333;
+//   border-bottom: 1px solid #000;
+
+//   &:hover,
+//   &:visited {
+//     color: #333333;
+//   }
+// }

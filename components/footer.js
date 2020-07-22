@@ -74,9 +74,9 @@ function Footer() {
         </ul>
 
         <ul>
-          {/* <li>
+          <li>
             <a href="/about">About</a>
-          </li> */}
+          </li>
           <li>
             <a href="mailto:halo13design@gmail.com?subject=Hello!">Contact</a>
           </li>
