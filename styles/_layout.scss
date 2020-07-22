@@ -453,7 +453,7 @@ footer hr {
   }
 
   a {
-    color: $brand-color;
+    color: white;
     text-shadow: 0 2px #000000;
 
     &:visited {
@@ -492,33 +492,6 @@ footer hr {
 
   svg.fillable path {
     fill: white;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  // .day.light-scheme {
-  //   background: white;
-  //   color: #555;
-  // }
-  // .night.light-scheme {
-  //   background: #eee;
-  //   color: black;
-  // }
-
-  body,
-  p {
-    color: #333333;
-    background-color: $background-color;
-  }
-
-  a {
-    color: #333333;
-    border-bottom: 1px solid #000;
-
-    &:hover,
-    &:visited {
-      color: #333333;
-    }
   }
 }
 
