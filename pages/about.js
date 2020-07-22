@@ -5,11 +5,7 @@ function About() {
     <>
       <Layout>
         <div className="profile-pic-wrapper mt2">
-          <img
-            src="/me.png"
-            alt="Walter Looking Dorky"
-            className="profile-pic"
-          />
+          {/* <img src="/me.png" alt="Walter Looking Dorky" className="profile-pic" /> */}
         </div>
         <h1>First and foremost, I am a husband and father.</h1>
         <p>

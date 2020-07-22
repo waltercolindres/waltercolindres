@@ -275,6 +275,10 @@ img {
   box-sizing: border-box;
 }
 
+.m0a {
+  margin: 0 auto;
+}
+
 .mY2 {
   margin: 0;
   margin-top: 2em;
@@ -328,6 +332,7 @@ footer button.scroll-arrow {
   visibility: hidden;
   border: 2px solid white;
   right: 6%;
+  display: flex;
 
   svg {
     fill: white;
@@ -416,18 +421,25 @@ footer hr {
   width: 100px;
   height: 100px;
   position: relative;
+  background-color: $brand-color;
+  background-image: url("/me.png");
+  background-position: 57% -24px;
+  background-size: 200px 133px;
+  border: 1px solid white;
 }
 
-.profile-pic {
-  width: 200px;
-  height: 133px;
-  position: absolute;
-  left: -56%;
-  right: 0;
-  top: -24px;
-  bottom: 0;
-  display: inline-table;
-}
+// .profile-pic {
+//   width: 200px;
+//   height: 133px;
+//   // position: absolute;
+//   // left: -56%;
+//   // right: 0;
+//   // top: -24px;
+//   bottom: 0;
+//   display: block;
+//   border-radius: 50%;
+//   overflow: hidden;
+// }
 
 @media (prefers-color-scheme: dark) {
   body,
@@ -462,7 +474,6 @@ footer hr {
 
     &:hover {
       color: $text-color;
-      text-decoration: underline;
       background-color: $brand-color;
       text-shadow: none;
     }
