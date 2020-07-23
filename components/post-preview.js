@@ -1,13 +1,12 @@
 import Link from "next/link";
 
-export default function PostPreview({ title, slug, postType }) {
+export default function PostPreview({ title, slug, postType, excerpt }) {
   return (
     <li>
       <Link as={`/${postType}/${slug}`} href={`/[postType]/[slug]`}>
         <a>{title}</a>
       </Link>
-
-      {/* <p>{excerpt}</p> */}
+      <div className="indent">{excerpt}</div>
     </li>
   );
 }
