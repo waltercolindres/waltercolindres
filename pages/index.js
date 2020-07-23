@@ -16,7 +16,7 @@ function Index({ preview, allPosts }) {
 
           <p>
             Formerly Sonic Drive-In - Digital Team, Old Hat Creative, QuiBids,
-            Archer Education. <a href="/about">Read more about me here.</a>
+            Archer Education. <a href="/about">Read more about me.</a>
           </p>
         </div>
         <AllSections posts={posts} />

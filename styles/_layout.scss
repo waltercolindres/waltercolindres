@@ -424,7 +424,7 @@ footer hr {
   background-image: url("/me.png");
   background-position: 57% -24px;
   background-size: 200px 133px;
-  border: 1px solid white;
+  border: 1px solid black;
 }
 
 // .profile-pic {
@@ -468,7 +468,7 @@ footer hr {
     text-shadow: 0 2px #000000;
 
     &:visited {
-      color: $brand-color;
+      color: white;
     }
 
     &:hover {
@@ -502,6 +502,10 @@ footer hr {
 
   svg.fillable path {
     fill: white;
+  }
+
+  .profile-pic-wrapper {
+    border: 1px solid white;
   }
 }
 
