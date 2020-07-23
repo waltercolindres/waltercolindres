@@ -1,12 +1,33 @@
 import Layout from "components/layout";
+import Head from "next/head";
+import { SITE_TITLE } from "utils/configs";
 
 function About() {
   return (
     <>
+      <Head>
+        <title>About | {SITE_TITLE}</title>
+        <meta
+          name="description"
+          content="About Walter Colindres - Product Experience Leader"
+        />
+        <meta
+          name="twitter:title"
+          content="About Walter Colindres - Product Experience Leader"
+        />
+        <meta
+          name="twitter:description"
+          content="About Walter Colindres - Product Experience Leader"
+        />
+        <meta property="og:url" content="waltercolindres.com/about/" />
+        <meta property="og:image" content="http://waltercolindres.com/me.png" />
+        <meta
+          name="twitter:image"
+          content="http://waltercolindres.com/me.png"
+        />
+      </Head>
       <Layout>
-        <div className="profile-pic-wrapper mt2">
-          {/* <img src="/me.png" alt="Walter Looking Dorky" className="profile-pic" /> */}
-        </div>
+        <div className="profile-pic-wrapper mt2"></div>
         <h1>First and foremost, I am a husband and father.</h1>
         <p>
           I am extremely lucky to have a family that supports my work and has

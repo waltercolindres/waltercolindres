@@ -1,6 +1,11 @@
 // import PropTypes from "prop-types";
 import Head from "next/head";
-import { TWITTER_CREATOR, TWITTER_SITE } from "utils/configs";
+import {
+  TWITTER_CREATOR,
+  TWITTER_SITE,
+  SITE_TITLE,
+  SITE_DESC,
+} from "utils/configs";
 
 function Meta(props) {
   let meta = props.meta || "null";
@@ -19,11 +24,7 @@ function Meta(props) {
         />
         {/* https://ogp.me/ */}
         <meta property="og:site_name" content="Walter Colindres" />
-        <meta
-          property="og:title"
-          content="Walter Colindres - Product Experience Leader"
-        />
-        />
+        <meta property="og:title" content={SITE_TITLE} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="waltercolindres.com" />
         <meta
@@ -41,16 +42,9 @@ function Meta(props) {
         {/* https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={TWITTER_SITE} />
-        <meta name="twitter:site" content="waltercolindres.com" />
         <meta name="twitter:creator" content={TWITTER_CREATOR} />
-        <meta
-          name="twitter:title"
-          content="Walter Colindres - Product Experience Leader"
-        />
-        <meta
-          name="twitter:description"
-          content="Walter Colindres - Product Experience Leader"
-        />
+        <meta name="twitter:title" content={SITE_TITLE} />
+        <meta name="twitter:description" content={SITE_DESC} />
         <meta
           name="twitter:image"
           content="http://waltercolindres.com/mio-4.png"

@@ -34,20 +34,17 @@ export default function Post({ post, preview }) {
                 <title>
                   {post.title} | {SITE_TITLE}
                 </title>
+                <meta name="description" content={post.excerpt} />
                 <meta name="twitter:title" content={post.title} />
-                <meta
-                  name="twitter:description"
-                  content="Walter Colindres - Product Experience Leader"
-                />
+                <meta name="twitter:description" content={post.excerpt} />
                 <meta
                   name="twitter:image"
                   content="http://waltercolindres.com/mio-4.png"
                 />
                 <meta
-                  name="description"
-                  content="Walter Colindres - Product Experience Leader"
+                  property="og:url"
+                  content={"waltercolindres.com/case-studies/" + post.slug}
                 />
-                <meta property="og:url" content="waltercolindres.com" />
                 <meta
                   property="og:image"
                   content="http://waltercolindres.com/mio-4.png"
