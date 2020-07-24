@@ -32,30 +32,3 @@ function Meta({ description, url, image, title }) {
   );
 }
 export default Meta;
-
-// Meta.propTypes = {
-//   // siteDescription: PropTypes.string,
-//   // siteKeywords: PropTypes.string,
-//   // "siteOgImage.fields.file.url": PropTypes.string,
-//   // "meta.siteOgTitle": PropTypes.string,
-//   // "meta.siteTitle": PropTypes.string,
-//   // "meta.siteTwitterDescription": PropTypes.string,
-//   "siteTwitterImage.fields.file.url": PropTypes.string,
-//   siteTwitterImageAltTag: PropTypes.string,
-//   // "meta.siteTwitterTitle": PropTypes.string,
-//   // "meta.siteUrl": PropTypes.string,
-// };
-
-// Meta.defaultProps = {
-//   // siteDescription:
-//   //   "This is the about page meta this is a test and we need to hit a min amount",
-//   // siteKeywords: "test",
-//   "siteOgImage.fields.file.url": "Link jkjlkj",
-//   // siteOgTitle: "test",
-//   // siteTitle: "test",
-//   // "meta.siteTwitterDescription": "Petra's List About",
-//   "siteTwitterImage.fields.file.url": "Link",
-//   siteTwitterImageAltTag: "Petra's List About",
-//   // "meta.siteTwitterTitle": "Petra's List About Twitter Title",
-//   // "meta.siteUrl": "petraslist.com",
-// };
