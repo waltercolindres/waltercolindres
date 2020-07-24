@@ -1,5 +1,4 @@
 import Layout from "components/layout";
-import Head from "next/head";
 import { SITE_TITLE } from "utils/configs";
 import Meta from "components/meta";
 

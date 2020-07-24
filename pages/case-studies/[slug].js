@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Head from "next/head";
 import ErrorPage from "next/error";
 import Breadcrumbs from "components/breadcrumbs";
 import Layout from "components/layout";
