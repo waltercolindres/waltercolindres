@@ -6,6 +6,7 @@ import PageBodyCopy from "components/page-body-copy";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "utils/contentful";
 import { SITE_TITLE, SITE_IMG } from "utils/configs";
 import Meta from "components/meta";
+import PostMeta from "components/post-meta";
 
 export default function Post({ post, preview }) {
   console.log(post);
