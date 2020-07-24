@@ -1,47 +1,35 @@
 import Layout from "components/layout";
 import Head from "next/head";
 import { SITE_TITLE } from "utils/configs";
+import Meta from "components/meta";
 
 function About() {
   return (
     <>
-      <Head>
-        <title>About | {SITE_TITLE}</title>
-        <meta
-          name="description"
-          content="About Walter Colindres - Product Experience Leader"
-        />
-        <meta
-          name="twitter:title"
-          content="About Walter Colindres - Product Experience Leader"
-        />
-        <meta
-          name="twitter:description"
-          content="About Walter Colindres - Product Experience Leader"
-        />
-        <meta property="og:url" content="waltercolindres.com/about/" />
-        <meta property="og:image" content="http://waltercolindres.com/me.png" />
-        <meta
-          name="twitter:image"
-          content="http://waltercolindres.com/me.png"
-        />
-      </Head>
+      <Meta
+        description="Walter Colindres - Product Experience Leader talks about himself"
+        url="waltercolindres.com/about/"
+        image="http://waltercolindres.com/me.png"
+        title={"About | " + SITE_TITLE}
+      />
       <Layout>
-        <div className="profile-pic-wrapper mt2"></div>
-        <h1>First and foremost, I am a husband and father.</h1>
-        <p>
-          I am extremely lucky to have a family that supports my work and has
-          sacrificed so that I may advance my career. I've been working in
-          digital transformations for the last decade. I love solving complex
-          digital experience problems and helping brands establish design and
-          development practices that deliver results.
-        </p>
-        <p>
-          My current role with rbi combines my passions of delivering delightful
-          accessible experiences, leading teams and mentoring the next
-          generation of leaders.
-        </p>
-        <hr className="mY2" />
+        <div className="intro">
+          <div className="profile-pic-wrapper mt2"></div>
+          <h1>First and foremost, I am a husband and father.</h1>
+          <p>
+            I am extremely lucky to have a family that supports my work and has
+            sacrificed so that I may advance my career. I've been working in
+            digital transformations for the last decade. I love solving complex
+            digital experience problems and helping brands establish design and
+            development practices that deliver results.
+          </p>
+          <p>
+            My current role with rbi combines my passions of delivering
+            delightful accessible experiences, leading teams and mentoring the
+            next generation of leaders.
+          </p>
+        </div>
+
         <h2>Experience &amp; Accomplishments</h2>
         <h3>rbi - Consumer Technology Group</h3>
         <ul>

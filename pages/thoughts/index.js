@@ -1,21 +1,21 @@
 import Layout from "components/layout";
 import AllSections from "components/all-sections";
 import { getAllThoughts } from "utils/contentful";
-import Head from "next/head";
-import { SITE_TITLE } from "utils/configs";
+import Meta from "components/meta";
+import { SITE_TITLE, SITE_IMG } from "utils/configs";
 
 function Index({ preview, allPosts }) {
   const posts = allPosts;
   console.log(posts);
   return (
     <>
-      <Head>
-        <title>Thoughts | {SITE_TITLE}</title>
-        <meta name="description" content="Collection of Thoughts" />
-        <meta name="twitter:title" content="Thoughts" />
-        <meta name="twitter:description" content="Collection of Thoughts" />
-        <meta property="og:url" content="waltercolindres.com/thoughts/" />
-      </Head>
+      <Meta
+        description="Collection of Thoughts"
+        image={SITE_IMG}
+        title={"Thoughts | " + SITE_TITLE}
+        url="waltercolindres.com/thoughts"
+      />
+
       <Layout preview={preview}>
         <AllSections posts={posts} />
       </Layout>

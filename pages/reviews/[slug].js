@@ -1,12 +1,11 @@
 import { useRouter } from "next/router";
-import Head from "next/head";
 import ErrorPage from "next/error";
 import Breadcrumbs from "components/breadcrumbs";
 import Layout from "components/layout";
 import PageBodyCopy from "components/page-body-copy";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "utils/contentful";
-import { SITE_TITLE } from "utils/configs";
-import PostMeta from "components/post-meta";
+import { SITE_TITLE, SITE_IMG } from "utils/configs";
+import Meta from "components/meta";
 
 export default function Post({ post, preview }) {
   console.log(post);
@@ -30,26 +29,12 @@ export default function Post({ post, preview }) {
         ) : (
           <>
             <article>
-              <Head>
-                <title>
-                  {post.title} | {SITE_TITLE}
-                </title>
-                <meta name="description" content={post.excerpt} />
-                <meta name="twitter:title" content={post.title} />
-                <meta name="twitter:description" content={post.excerpt} />
-                <meta
-                  name="twitter:image"
-                  content="http://waltercolindres.com/mio-4.png"
-                />
-                <meta
-                  property="og:url"
-                  content={"waltercolindres.com/reviews/" + post.slug}
-                />
-                <meta
-                  property="og:image"
-                  content="http://waltercolindres.com/mio-4.png"
-                />
-              </Head>
+              <Meta
+                description={post.excerpt}
+                image={SITE_IMG}
+                title={post.title + " | " + SITE_TITLE}
+                url={"waltercolindres.com/reviews/" + post.slug}
+              />
 
               <h1 className="mb0">{post.title}</h1>
               <PostMeta

@@ -137,12 +137,25 @@ hr {
 }
 
 .projects-list {
-  margin: 2em 0;
-  padding: 0 0 2em 0;
+  // margin: 2em 0;
+
   border-bottom: 1px solid black;
+
+  margin-top: 2em;
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
 
   li {
     margin: 0.25em 0;
+    padding: 1em 0;
+    // border-bottom: 1px solid black;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 
   &:last-of-type {
@@ -502,6 +515,10 @@ footer hr {
 
   .projects-list {
     border-bottom: 1px solid #ffffff;
+
+    // li {
+    //   border-bottom: 1px solid white;
+    // }
   }
 
   svg.fillable path {

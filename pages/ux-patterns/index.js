@@ -1,21 +1,21 @@
 import Layout from "components/layout";
 import AllSections from "components/all-sections";
 import { getAllUXPatterns } from "utils/contentful";
-import Head from "next/head";
-import { SITE_TITLE } from "utils/configs";
+import { SITE_TITLE, SITE_IMG } from "utils/configs";
+import Meta from "components/meta";
 
 function Index({ preview, allPosts }) {
   const posts = allPosts;
-  console.log(posts);
+
   return (
     <>
-      <Head>
-        <title>UX Patterns | {SITE_TITLE}</title>
-        <meta name="description" content="Collection of UX Patterns" />
-        <meta name="twitter:title" content="UX Patterns" />
-        <meta name="twitter:description" content="Collection of UX Patterns" />
-        <meta property="og:url" content="waltercolindres.com/ux-patterns/" />
-      </Head>
+      <Meta
+        description="Collection of UX Patterns"
+        image={SITE_IMG}
+        title={"UX Patterns | " + SITE_TITLE}
+        url="waltercolindres.com/ux-patterns/"
+      />
+
       <Layout preview={preview}>
         <AllSections posts={posts} />
       </Layout>

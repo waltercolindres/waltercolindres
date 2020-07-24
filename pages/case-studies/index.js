@@ -1,21 +1,20 @@
 import Layout from "components/layout";
 import AllSections from "components/all-sections";
 import { getAllCaseStudies } from "utils/contentful";
-import Head from "next/head";
-import { SITE_TITLE } from "utils/configs";
+import Meta from "components/meta";
+import { SITE_TITLE, SITE_IMG } from "utils/configs";
 
 function Index({ preview, allPosts }) {
   const posts = allPosts;
   console.log(posts);
   return (
     <>
-      <Head>
-        <title>Case Studies | {SITE_TITLE}</title>
-        <meta name="description" content="Collection of Case Studies" />
-        <meta name="twitter:title" content="Case Studies" />
-        <meta name="twitter:description" content="Collection of Case Studies" />
-        <meta property="og:url" content="waltercolindres.com/case-studies/" />
-      </Head>
+      <Meta
+        description="Collection of Case Studies"
+        image={SITE_IMG}
+        title={"Case Studies | " + SITE_TITLE}
+        url="waltercolindres.com/case-studies"
+      />
       <Layout preview={preview}>
         <AllSections posts={posts} />
       </Layout>
