@@ -12,7 +12,7 @@ p {
 a {
   color: #333333;
   text-decoration: none;
-  border-bottom: 1px solid #000;
+  // border-bottom: 1px solid #000;
   transition: 0.2s ease-in-out 0s;
   font-weight: bold;
 
@@ -32,6 +32,16 @@ strong {
 p {
   line-height: 1.8;
 }
+
+// a[href*="//waltercolindres."]:after
+// {
+//   content: url("/outbound-arrow.svg");
+//   right: 0;
+//   position: relative;
+//   top: -0.35em;
+//   margin-left: 5px;
+//   transform: rotate(45deg);
+// }
 
 a[href*="//"]:not([href*="waltercolindres."]):after, a[href*="mailto"]:after
 {
@@ -156,12 +166,29 @@ hr {
 
     &:last-of-type {
       border-bottom: none;
+      padding-bottom: 2em;
     }
   }
 
   &:last-of-type {
     border-bottom: none;
     padding-bottom: 0;
+  }
+
+  .unbold {
+    font-weight: normal;
+    border: 0;
+    padding-top: 0;
+
+    &::after {
+      content: url("/inbound-arrow.svg");
+      right: 0;
+      position: relative;
+      display: inline-block;
+      // top: -0.35em;
+      margin-left: 5px;
+      transform: rotate(45deg);
+    }
   }
 }
 
