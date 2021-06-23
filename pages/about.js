@@ -23,17 +23,32 @@ function About() {
             development practices that deliver results.
           </p>
           <p>
-            My current role with rbi combines my passions of delivering
+            My current role with Vistaprint combines my passions of delivering
             delightful accessible experiences, leading teams and mentoring the
             next generation of leaders.
           </p>
         </div>
 
         <h2>Experience &amp; Accomplishments</h2>
-        <h3>rbi - Consumer Technology Group</h3>
+
+        <h3>Vistaprint Digital</h3>
         <ul>
           <li>
-            Leading the Product Experience Practice across the rbi portfolio
+            Leading the Growth &amp; Retention Team
+          </li>
+        </ul>
+        <h3>rbi - Consumer Technology Group</h3>
+        <ul>
+        <li>
+            Launched 15 ordering platforms in a 6 months span (web, native apps, kiosk) for Burger King, Popeyes and Tim Hortons
+          </li>
+          <li>
+            Launched over 50 features in a year
+          </li>
+          <li>Increased conversion of Delivery funnel by 300%</li>
+          <li>Increased Pick Up funnel by 150%</li>
+          <li>Increased frequency for returning users by 330%</li>
+          <li>Dramatically increased Offer usage through new UI and features such as Promo Code Offers
           </li>
         </ul>
         <h3>Sonic Drive-In Digital Team</h3>

@@ -15,10 +15,12 @@ class MyDocument extends Document {
           <link
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
             rel="stylesheet"
+            async
           />
           <link
             href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&display=swap"
             rel="stylesheet"
+            async
           />
 
           {/* Global Site Tag (gtag.js) - Google Analytics */}

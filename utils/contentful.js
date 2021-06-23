@@ -14,19 +14,19 @@ const previewClient = require("contentful").createClient({
 export async function getAllPostsTypesForHome(preview) {
   const thoughts = await client.getEntries({
     content_type: "post",
-    order: "sys.createdAt",
+    order: "-sys.createdAt",
     "fields.postType": "thoughts",
   });
 
   const uxPatterns = await client.getEntries({
     content_type: "post",
-    order: "sys.createdAt",
+    order: "sys.id",
     "fields.postType": "ux-patterns",
   });
 
   const caseStudies = await client.getEntries({
     content_type: "post",
-    order: "sys.createdAt",
+    order: "sys.id",
     "fields.postType": "case-studies",
   });
 
@@ -46,7 +46,7 @@ export async function getAllPostsTypesForHome(preview) {
 export async function getAllThoughts(preview) {
   const thoughts = await client.getEntries({
     content_type: "post",
-    order: "sys.createdAt",
+    order: "-sys.createdAt",
     "fields.postType": "thoughts",
   });
 
@@ -69,7 +69,7 @@ export async function getAllReviews(preview) {
 export async function getAllCaseStudies(preview) {
   const caseStudies = await client.getEntries({
     content_type: "post",
-    order: "sys.createdAt",
+    order: "sys.id",
     "fields.postType": "case-studies",
   });
 
@@ -81,7 +81,7 @@ export async function getAllCaseStudies(preview) {
 export async function getAllUXPatterns(preview) {
   const uxPatterns = await client.getEntries({
     content_type: "post",
-    order: "sys.createdAt",
+    order: "sys.id",
     "fields.postType": "ux-patterns",
   });
 
