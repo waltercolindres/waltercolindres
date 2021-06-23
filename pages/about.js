@@ -37,6 +37,7 @@ function About() {
             Leading the Growth &amp; Retention Team
           </li>
         </ul>
+        <hr/>
         <h3>rbi - Consumer Technology Group</h3>
         <ul>
         <li>
@@ -51,6 +52,7 @@ function About() {
           <li>Dramatically increased Offer usage through new UI and features such as Promo Code Offers
           </li>
         </ul>
+        <hr/>
         <h3>Sonic Drive-In Digital Team</h3>
         <ul>
           <li>Lead Sonic Web Discipline</li>
