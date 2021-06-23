@@ -139,9 +139,7 @@ hr {
 
 .projects-list {
   // margin: 2em 0;
-
   border-bottom: 1px solid black;
-
   margin-top: 2em;
 
   ul {
@@ -153,6 +151,8 @@ hr {
     margin: 0.25em 0;
     padding: 1em 0;
     border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
 
     &:last-of-type {
       border-bottom: none;
