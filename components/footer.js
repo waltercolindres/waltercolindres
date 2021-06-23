@@ -84,7 +84,7 @@ function Footer() {
 
       <div className="copyright">
         <div>{SITE_TITLE}</div>
-        <div>MGA / OKC / MIA</div>
+        <div>MGA / OKC / MIA / SEA</div>
         <div> © 1981 - {date}</div>
 
         <svg

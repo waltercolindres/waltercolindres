@@ -3,5 +3,5 @@ export const TWITTER_CREATOR = "waltercolindres";
 export const SITE_TITLE = "Walter Colindres - Product Experience Leader";
 export const SITE_DESC =
   "Walter Colindres - Thoughts and Reviews that center around Product Experience and sometimes life.";
-export const SITE_IMG = "http://waltercolindres.com/mio-4.png";
+export const SITE_IMG = "http://waltercolindres.com/me.png";
 export const SITE_URL = "waltercolindres.com";
