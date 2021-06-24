@@ -4,13 +4,13 @@ export default function PostPreview({ title, slug, postType, excerpt }) {
   return (
     <li>
       <Link as={`/${postType}/${slug}`} href={`/[postType]/[slug]`}>
-        <a>{title}</a>
+        <><a>{title}</a>/</>
       </Link>
-      <div className="indent">
+      {/* <span className="indent"> */}
       <Link as={`/${postType}/${slug}`} href={`/[postType]/[slug]`}>
         <a className="unbold">{excerpt}</a>
       </Link>
-      </div>
+      {/* </span> */}
     </li>
   );
 }

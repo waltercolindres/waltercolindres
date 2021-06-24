@@ -158,7 +158,7 @@ hr {
   }
 
   li {
-    margin: 0.25em 0;
+    // margin: 0.25em 0;
     padding: 1em 0;
     border-bottom: 1px solid #e0e0e0;
     display: flex;
@@ -177,14 +177,13 @@ hr {
   .unbold {
     font-weight: normal;
     border: 0;
-    padding-top: 0;
 
     &::after {
       content: url("/inbound-arrow.svg");
       right: 0;
       position: relative;
       display: inline-block;
-      // top: -0.35em;
+      top: -2px;
       margin-left: 5px;
       transform: rotate(45deg);
     }
