@@ -492,7 +492,7 @@ footer hr {
 
   a {
     color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+    // border-bottom: 1px solid #ffffff;
 
     &:hover,
     &:visited {
@@ -519,6 +519,7 @@ footer hr {
       background-color: $brand-color;
       text-shadow: none;
     }
+
   }
 
   .intro {
@@ -528,6 +529,11 @@ footer hr {
   a[href*="//"]:not([href*="waltercolindres."]):after, a[href*="mailto"]:after
   {
     content: url("/outbound-arrow-white.svg");
+  }
+
+  a[href*="//"]:hover:not([href*="waltercolindres."]):after, a[href*="mailto"]:hover:after
+  {
+    content: url("/outbound-arrow.svg");
   }
 
   .sticky {
@@ -542,9 +548,21 @@ footer hr {
   .projects-list {
     border-bottom: 1px solid #ffffff;
 
+    li {
+      border-bottom: 1px solid #414141;
+    }
     // li {
     //   border-bottom: 1px solid white;
     // }
+    .unbold {
+      &::after {
+        content: url("/inbound-arrow-white.svg");
+      }
+
+      &:hover::after {
+        content: url("/inbound-arrow.svg");
+      }
+    }
   }
 
   svg.fillable path {

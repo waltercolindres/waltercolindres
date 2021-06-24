@@ -3,7 +3,7 @@ import PostPreview from "./post-preview";
 export default function SectionList({ posts, title, postType, excerpt }) {
   return (
     <div className="projects-list">
-      <h2>{title}</h2>
+      <h2 className="mb0">{title}</h2>
       <ul>
         {posts.map((post) => (
           <PostPreview
