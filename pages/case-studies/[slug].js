@@ -34,7 +34,7 @@ export default function Post({ post, preview }) {
                 description={post.excerpt}
                 image={SITE_IMG}
                 title={post.title + " | " + SITE_TITLE}
-                url={"waltercolindres.com/case-studies/" + post.slug}
+                url={"https://waltercolindres.com/case-studies/" + post.slug}
               />
 
               <h1 className="mb0">{post.title}</h1>

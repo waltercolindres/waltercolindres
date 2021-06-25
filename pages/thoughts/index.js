@@ -13,7 +13,7 @@ function Index({ preview, allPosts }) {
         description="Collection of Thoughts"
         image={SITE_IMG}
         title={"Thoughts | " + SITE_TITLE}
-        url="waltercolindres.com/thoughts"
+        url="https://waltercolindres.com/thoughts"
       />
 
       <Layout preview={preview}>

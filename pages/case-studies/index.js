@@ -13,7 +13,7 @@ function Index({ preview, allPosts }) {
         description="Collection of Case Studies"
         image={SITE_IMG}
         title={"Case Studies | " + SITE_TITLE}
-        url="waltercolindres.com/case-studies"
+        url="http://waltercolindres.com/case-studies"
       />
       <Layout preview={preview}>
         <AllSections posts={posts} />
