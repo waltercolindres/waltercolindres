@@ -34,13 +34,13 @@ function About() {
         <h3>Vistaprint Digital</h3>
         <ul>
           <li>
-            Leading the Growth &amp; Retention Team
+            Leading the Growth &amp; Retention Portfolio
           </li>
         </ul>
-        <hr/>
+        <hr />
         <h3>rbi - Consumer Technology Group</h3>
         <ul>
-        <li>
+          <li>
             Launched 15 ordering platforms in a 6 months span (web, native apps, kiosk) for Burger King, Popeyes and Tim Hortons
           </li>
           <li>
@@ -52,7 +52,7 @@ function About() {
           <li>Dramatically increased Offer usage through new UI and features such as Promo Code Offers
           </li>
         </ul>
-        <hr/>
+        <hr />
         <h3>Sonic Drive-In Digital Team</h3>
         <ul>
           <li>Lead Sonic Web Discipline</li>
