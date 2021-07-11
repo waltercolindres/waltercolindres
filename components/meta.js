@@ -2,7 +2,10 @@
 import Head from "next/head";
 import { TWITTER_CREATOR, TWITTER_SITE } from "utils/configs";
 
-function Meta({ description, url, image, title }) {
+function Meta({ description, url, image, title, keywords }) {
+
+  (console.log(keywords));
+
   return (
     <>
       <Head>
@@ -10,7 +13,7 @@ function Meta({ description, url, image, title }) {
         <meta name="description" content={description} />
         <meta
           name="keywords"
-          content="product, experience, design, website, product management"
+          content={keywords}
         />
         {/* https://ogp.me/ */}
         <meta property="og:site_name" content="Walter Colindres" />

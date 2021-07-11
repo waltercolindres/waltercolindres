@@ -2,7 +2,7 @@ import Layout from "components/layout";
 import AllSections from "components/all-sections";
 import { getAllPostsTypesForHome } from "utils/contentful";
 import Meta from "components/meta";
-import { SITE_TITLE, SITE_DESC, SITE_URL, SITE_IMG } from "utils/configs";
+import { SITE_TITLE, SITE_DESC, SITE_URL, SITE_IMG, SITE_KEYWORDS } from "utils/configs";
 
 function Index({ preview, allPosts }) {
   const posts = allPosts;
@@ -14,6 +14,7 @@ function Index({ preview, allPosts }) {
         url={SITE_URL}
         image={SITE_IMG}
         title={SITE_TITLE}
+        keywords={SITE_KEYWORDS}
       />
       <Layout preview={preview}>
         <div className="intro">

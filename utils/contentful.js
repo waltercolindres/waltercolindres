@@ -91,14 +91,14 @@ export async function getAllUXPatterns(preview) {
 }
 
 function parsePost({ fields }) {
-  console.log("sdsdssdsdsdsdssd");
+  console.log("start post fields");
   console.log(fields);
-  console.log("sdsdssdsdsdsdssd");
+  console.log("end post fields \n \n \n");
   return {
     title: fields.title,
     slug: fields.slug,
     postType: fields.postType,
-    // date: fields.date,
+    meta: fields.metaData || null,
     content: fields.content || null,
     excerpt: fields.excerpt || null,
   };
@@ -126,9 +126,9 @@ export async function getPostAndMorePosts(slug, preview) {
   //   "fields.slug[nin]": slug,
   // });
 
-  console.log("[]][[[[[[[[[[[[[");
+  console.log("parseEntry");
   console.log(parsePostEntries(entry)[0]);
-  console.log("[]][[[[[[[[[[[[[");
+  console.log("parseEntry");
 
   return {
     post: parsePostEntries(entry)[0],

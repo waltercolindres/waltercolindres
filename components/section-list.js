@@ -1,6 +1,6 @@
 import PostPreview from "./post-preview";
 
-export default function SectionList({ posts, title, postType, excerpt }) {
+export default function SectionList({ posts, title }) {
   return (
     <div className="projects-list">
       <h2 className="mb0">{title}</h2>
@@ -12,6 +12,7 @@ export default function SectionList({ posts, title, postType, excerpt }) {
             slug={post.slug}
             postType={post.postType}
             excerpt={post.excerpt}
+            keywords={post.keywords}
           />
         ))}
       </ul>

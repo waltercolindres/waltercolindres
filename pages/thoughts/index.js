@@ -14,6 +14,7 @@ function Index({ preview, allPosts }) {
         image={SITE_IMG}
         title={"Thoughts | " + SITE_TITLE}
         url="https://waltercolindres.com/thoughts"
+        keywords="thoughts, design, product management"
       />
 
       <Layout preview={preview}>

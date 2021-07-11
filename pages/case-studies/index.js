@@ -14,6 +14,7 @@ function Index({ preview, allPosts }) {
         image={SITE_IMG}
         title={"Case Studies | " + SITE_TITLE}
         url="http://waltercolindres.com/case-studies"
+        keywords="case studies, design, product management"
       />
       <Layout preview={preview}>
         <AllSections posts={posts} />

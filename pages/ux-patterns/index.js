@@ -14,6 +14,7 @@ function Index({ preview, allPosts }) {
         image={SITE_IMG}
         title={"UX Patterns | " + SITE_TITLE}
         url="waltercolindres.com/ux-patterns/"
+        keywords="ux patterns, design, product"
       />
 
       <Layout preview={preview}>

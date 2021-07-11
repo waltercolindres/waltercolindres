@@ -14,6 +14,7 @@ function Index({ preview, allPosts }) {
         image={SITE_IMG}
         title={"Reviews | " + SITE_TITLE}
         url="https://waltercolindres.com/reviews"
+        keywords="reviews, product management, product reviews"
       />
 
       <Layout preview={preview}>

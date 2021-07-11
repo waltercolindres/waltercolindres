@@ -1,11 +1,10 @@
 import { useRouter } from "next/router";
-import Head from "next/head";
 import ErrorPage from "next/error";
 import Breadcrumbs from "components/breadcrumbs";
 import Layout from "components/layout";
 import PageBodyCopy from "components/page-body-copy";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "utils/contentful";
-import { SITE_TITLE, SITE_IMG } from "utils/configs";
+import { SITE_TITLE, SITE_IMG, SITE_KEYWORDS } from "utils/configs";
 import PostMeta from "components/post-meta";
 import Meta from "components/meta";
 
@@ -35,6 +34,7 @@ export default function Post({ post, preview }) {
                 description={post.excerpt}
                 image={SITE_IMG}
                 title={post.title + " | " + SITE_TITLE}
+                keywords={post.meta?.fields.siteKeywords || SITE_KEYWORDS}
                 url={"waltercolindres.com/ux-patterns/" + post.slug}
               />
 
