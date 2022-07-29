@@ -19,11 +19,11 @@ function Index({ preview, allPosts }) {
       <Layout preview={preview}>
         <div className="intro">
           <h1>
-            Currently leading Growth and Retention for Vistaprint Product.
+            Customer-centric Problem Solver for E-Commerce.
           </h1>
 
           <p>
-            Formerly Digtial Product Experience Lead for rbi (Burger King, Popeyes, Tim Hortons), Sonic Drive-In - Digital Team, Old Hat Creative, QuiBids,
+            Formerly VistaPrint (Vista), Digtial Product Experience Lead for rbi (Burger King, Popeyes, Tim Hortons), Sonic Drive-In - Digital Team, Old Hat Creative, QuiBids,
             Archer Education. <a href="/about">Read more about me.</a>
           </p>
         </div>

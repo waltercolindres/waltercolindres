@@ -23,18 +23,18 @@ function About() {
             development practices that deliver results.
           </p>
           <p>
-            My current role with Vistaprint combines my passions of delivering
-            delightful accessible experiences, leading teams and mentoring the
+            My ideal role combines my passions of delivering
+            delightful and accessible experiences while leading and mentoring the
             next generation of leaders.
           </p>
         </div>
 
         <h2>Experience &amp; Accomplishments</h2>
 
-        <h3>Vistaprint Digital</h3>
+        <h3>VistaPrint</h3>
         <ul>
           <li>
-            Leading the Growth &amp; Retention Portfolio
+            Led the Growth &amp; Retention Portfolio
           </li>
         </ul>
         <hr />
