@@ -77,7 +77,7 @@ function Footer() {
             <a href="/about">About</a>
           </li>
           <li>
-            <a href="mailto:halo13design@gmail.com?subject=Hello!">Contact</a>
+            <a href="mailto:iam@waltercolindres.com?subject=Hello!">Contact</a>
           </li>
         </ul>
       </div>
