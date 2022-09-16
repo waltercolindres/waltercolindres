@@ -9,7 +9,6 @@ import PostMeta from "components/post-meta";
 import Meta from "components/meta";
 
 export default function Post({ post, preview }) {
-  console.log(post);
 
   const router = useRouter();
   let content;

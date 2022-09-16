@@ -31,7 +31,7 @@ function About() {
 
         <h2>Experience &amp; Accomplishments</h2>
 
-        <h3>VistaPrint</h3>
+        <h3>Vista (Formerly VistaPrint)</h3>
         <ul>
           <li>
             Led the Growth &amp; Retention Portfolio

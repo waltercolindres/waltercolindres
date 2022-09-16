@@ -6,7 +6,6 @@ import { SITE_TITLE, SITE_DESC, SITE_URL, SITE_IMG, SITE_KEYWORDS } from "utils/
 
 function Index({ preview, allPosts }) {
   const posts = allPosts;
-  console.log(posts);
   return (
     <>
       <Meta
