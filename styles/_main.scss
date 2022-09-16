@@ -37,4 +37,4 @@ $on-laptop: 800px;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import "../styles/base", "../styles/_layout";
+@import  "../styles/_reset", "../styles/base", "../styles/_layout";
