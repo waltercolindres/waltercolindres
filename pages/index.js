@@ -22,7 +22,7 @@ function Index({ preview, allPosts }) {
           </h1>
 
           <p>
-            Formerly VistaPrint (Vista), Digtial Product Experience Lead for rbi (Burger King, Popeyes, Tim Hortons), Sonic Drive-In - Digital Team, Old Hat Creative, QuiBids,
+            Previously at VistaPrint (Vista), Digtial Product Experience Lead for rbi (Burger King, Popeyes, Tim Hortons), Sonic Drive-In - Digital Team, Old Hat Creative, QuiBids,
             Archer Education. <a href="/about">Read more about me.</a>
           </p>
         </div>
