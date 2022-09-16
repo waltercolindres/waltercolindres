@@ -5,6 +5,7 @@ module.exports = async (phase, { defaultConfig }) => {
   const nextConfig = {
     /* config options here */
       swcMinify: true,
+      experimental: { optimizeCss: true }
   }
   return nextConfig
 }

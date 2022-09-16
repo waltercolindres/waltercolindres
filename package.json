@@ -9,6 +9,7 @@
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "babel-cli": "^6.26.0",
     "contentful": "^9.2.4",
+    "critters": "0.0.7",
     "dayjs": "^1.8.29",
     "lodash.camelcase": "^4.3.0",
     "next": "12",
