@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Walter Colindres — husband, father, first-generation Nicaraguan-American, and product leader with 15+ years in digital transformation.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Walter Colindres">
+<link rel="canonical" href="https://waltercolindres.com/about">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://waltercolindres.com/about">
+<meta property="og:title" content="About — Walter Colindres">
+<meta property="og:description" content="Husband, father, first-generation Nicaraguan-American, and product leader. This is my story.">
+<title>About — Walter Colindres</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Instrument+Serif:ital@0;1&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #060606;
+    --white: #fafaf7;
+    --red: #e8162a;
+    --pink: #e84d9a;
+    --border: rgba(255,255,255,0.1);
+    --muted: rgba(250,250,247,0.45);
+    --muted-strong: rgba(250,250,247,0.7);
+  }
+
+  html { scroll-behavior: smooth; background: var(--black); }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 52px;
+    background: rgba(6,6,6,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(250,250,247,0.5);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--white); }
+
+  .nav-back {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--red); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 120px 40px 80px;
+    max-width: 900px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-kicker {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-kicker::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--red);
+  }
+
+  .hero-headline {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(40px, 5.5vw, 80px);
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -2px;
+    margin-bottom: 32px;
+    color: var(--white);
+  }
+
+  .hero-headline em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--red);
+  }
+
+  .hero-lead {
+    font-size: clamp(16px, 1.6vw, 20px);
+    font-weight: 300;
+    color: var(--muted-strong);
+    max-width: 640px;
+    line-height: 1.75;
+  }
+
+  /* ── SECTIONS ── */
+  .about-body {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 72px 40px;
+    border-bottom: 1px solid var(--border);
+    max-width: 860px;
+  }
+
+  .section-wide {
+    max-width: 100%;
+    padding: 72px 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--red);
+  }
+
+  .section-label.pink { color: var(--pink); }
+  .section-label.pink::before { background: var(--pink); }
+
+  .prose {
+    font-size: clamp(15px, 1.4vw, 17px);
+    color: var(--muted-strong);
+    line-height: 1.85;
+    max-width: 680px;
+  }
+
+  .prose p { margin-bottom: 24px; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  .prose strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .prose em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--white);
+    font-size: 1.05em;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 34px);
+    line-height: 1.35;
+    color: var(--white);
+    border-left: 2px solid var(--red);
+    padding-left: 28px;
+    margin: 48px 0;
+    max-width: 640px;
+  }
+
+  /* ── CAREER TIMELINE ── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 860px;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  .timeline-item:last-child { border-bottom: none; }
+
+  .timeline-left {}
+
+  .timeline-company {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .timeline-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+
+  .timeline-right {}
+
+  .timeline-desc {
+    font-size: 14px;
+    color: var(--muted-strong);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .timeline-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .stat-pill {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--red);
+    border: 1px solid rgba(232,22,42,0.3);
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+
+  /* ── METRICS GRID ── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  .metric-item {
+    background: var(--black);
+    padding: 32px 28px;
+  }
+
+  .metric-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(28px, 3vw, 44px);
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .metric-label {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── MAKING THINGS GRID ── */
+  .making-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  .making-item {
+    background: var(--black);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+
+  .making-item:hover { background: #0f0f0f; }
+
+  .making-icon {
+    font-size: 24px;
+    margin-bottom: 16px;
+    line-height: 1;
+  }
+
+  .making-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+
+  .making-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 28px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(250,250,247,0.25);
+    text-decoration: none;
+  }
+
+  .footer-logo span { color: var(--red); }
+
+  .footer-link {
+    font-size: 12px;
+    color: rgba(250,250,247,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover { color: var(--red); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-kicker   { animation: fadeUp 0.5s ease both; }
+  .hero-headline { animation: fadeUp 0.5s 0.1s ease both; }
+  .hero-lead     { animation: fadeUp 0.5s 0.2s ease both; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .section, .section-wide { padding: 52px 24px; }
+    .timeline-item { grid-template-columns: 1fr; gap: 16px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://waltercolindres.com" class="nav-logo"><span>Walter</span> Colindres</a>
+  <a href="https://waltercolindres.com" class="nav-back">← Back</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-kicker">About</div>
+  <h1 class="hero-headline">Husband. Father.<br><em>Builder.</em></h1>
+  <p class="hero-lead">Before any title I've held or product I've shipped, those three words are the ones that matter most to me. Everything else is built on top of them.</p>
+</div>
+
+<!-- BODY -->
+<div class="about-body">
+
+  <!-- PERSONAL -->
+  <div class="section">
+    <div class="section-label">Where I come from</div>
+    <div class="prose">
+      <p>I am married to <strong>Petra</strong> and a father to <strong>Mia</strong> and <strong>Bodie</strong>. They are my why — the reason I work hard, stay curious, and try to build things that matter.</p>
+      <p>I am a <strong>first-generation Nicaraguan refugee</strong> turned immigrant and American citizen. The son of <strong>Daisy</strong>, who cleaned houses to make ends meet, and <strong>Juan</strong>, who toiled late evenings at a slaughterhouse until his wrist gave out. A brother to <strong>Maritza</strong>, a newly minted RN. I didn't come from tech. I came from people who worked with their hands so I could work with my mind — and I carry that with me every single day.</p>
+      <p>That origin shapes how I work. I don't take shortcuts. I don't treat users as abstractions. And I never forget that on the other side of every screen is a real person trying to do something that matters to them.</p>
+    </div>
+
+    <div class="pull-quote">
+      "I didn't come from tech. I came from people who worked with their hands so I could work with my mind."
+    </div>
+  </div>
+
+  <!-- UNICORN -->
+  <div class="section">
+    <div class="section-label">What I do</div>
+    <div class="prose">
+      <p>I am, genuinely, a <em>unicorn</em> in the tech world. I am a designer, a front-end developer, and a product manager — all three, at the same time, for real. That combination is rare, and I've spent my career leaning into it rather than picking a lane.</p>
+      <p>I've spent over a decade in <strong>digital transformation and e-commerce</strong> — building the apps, platforms, and systems that millions of people interact with every day, mostly without ever knowing my name. That's the job. You succeed when the product gets out of the way and just works.</p>
+      <p>What drives me is solving complex experience problems with <strong>great design and real technology</strong>, and doing it alongside people I can learn from — and mentor in return. Some of the most meaningful work I've done hasn't shipped a feature. It's helped someone else find their footing as a product leader.</p>
+    </div>
+  </div>
+
+  <!-- CAREER -->
+  <div class="section-wide">
+    <div class="section-label">Where I've been</div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-company">Jack in the Box</div>
+          <div class="timeline-role">Director of Product Management<br>Current</div>
+        </div>
+        <div class="timeline-right">
+          <p class="timeline-desc">I own the full guest-facing digital stack — iOS, Android, web — alongside back-of-house systems including order management, fraud detection, and enterprise tooling. I rebuilt what was broken, shipped what mattered, and am building a team and culture that will outlast any single feature.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-company">VistaPrint (Vista)</div>
+          <div class="timeline-role">Director of Product<br>Growth & Retention</div>
+        </div>
+        <div class="timeline-right">
+          <p class="timeline-desc">Led the Growth & Retention portfolio, owning the strategies and systems that kept millions of small business customers coming back. This is where I sharpened my thinking on lifecycle, loyalty, and what it really means to earn a customer's long-term trust.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-company">The Walt Disney Company</div>
+          <div class="timeline-role">Product Manager<br>Next Generation Storytelling</div>
+        </div>
+        <div class="timeline-right">
+          <p class="timeline-desc">One of the most creatively ambitious roles of my career. I worked on Next Generation Storytelling (NGS), leading the Metaverse Rewards System — an early and genuine exploration of connected, cross-platform identity and rewards inside one of the world's most beloved brands.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-company">Restaurant Brands International</div>
+          <div class="timeline-role">Sr. Product Manager<br>Shared Experience Platform</div>
+        </div>
+        <div class="timeline-right">
+          <p class="timeline-desc">One of the most intense and rewarding runs of my career. I launched 15 ordering platforms in 6 months across web, native apps, and kiosk — spanning Burger King, Popeyes, and Tim Hortons. Fifty-plus features shipped in a year. The kind of pace that either breaks you or defines you.</p>
+          <div class="timeline-stats">
+            <span class="stat-pill">+300% delivery conversion</span>
+            <span class="stat-pill">+150% pick-up conversion</span>
+            <span class="stat-pill">+330% returning user frequency</span>
+            <span class="stat-pill">15 platforms in 6 months</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <div class="timeline-company">Sonic Drive-In</div>
+          <div class="timeline-role">Sr. Product Manager<br>Front-End Engineer</div>
+        </div>
+        <div class="timeline-right">
+          <p class="timeline-desc">I wore every hat. Led the web discipline, served as technical lead across web, email, SMS, and internal tooling, and drove best practices in accessibility and system architecture. I built and shipped the MySonic experience end-to-end — rewards, e-commerce, SSO, and the Digital Menu Manager that powered Order Ahead at national scale.</p>
+          <div class="timeline-stats">
+            <span class="stat-pill">380M+ site views</span>
+            <span class="stat-pill">43M+ users</span>
+            <span class="stat-pill">99.9%+ uptime</span>
+            <span class="stat-pill">$3M+ in LFL donations</span>
+            <span class="stat-pill">2M+ votes enabled</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MAKING THINGS -->
+  <div class="section-wide">
+    <div class="section-label pink">When I'm not shipping product</div>
+    <div class="prose">
+      <p>I make things with my hands. Always have. It's how I decompress, how I stay creative, and honestly — it's where some of my best product thinking happens. The overlap between craft and design is real, and I've never been able to fully separate them.</p>
+    </div>
+
+    <div class="making-grid">
+      <div class="making-item">
+        <div class="making-icon">🎨</div>
+        <div class="making-title">Oil Painting</div>
+        <div class="making-desc">Working on wood panels using a grisaille technique. Slow, deliberate, unforgiving — exactly the opposite of shipping software.</div>
+      </div>
+      <div class="making-item">
+        <div class="making-icon">🖨️</div>
+        <div class="making-title">3D Printing</div>
+        <div class="making-desc">Cosplay builds, custom parts, and whatever my kids dream up. The Bambu Lab A1 has become a permanent fixture in my life.</div>
+      </div>
+      <div class="making-item">
+        <div class="making-icon">✂️</div>
+        <div class="making-title">Laser Cutting</div>
+        <div class="making-desc">Stencil-making and street art production. Precision cutting for work that ends up on walls and wood panels.</div>
+      </div>
+      <div class="making-item">
+        <div class="making-icon">🧱</div>
+        <div class="making-title">LEGO Customization</div>
+        <div class="making-desc">Custom builds, original designs, and modifications that go well beyond the instructions. A hobby Mia and Bodie have fully inherited.</div>
+      </div>
+      <div class="making-item">
+        <div class="making-icon">🚙</div>
+        <div class="making-title">The Garage</div>
+        <div class="making-desc">A 2020 Jeep Wrangler JL and a 2014 Toyota FJ Cruiser. Both are projects. Neither is done.</div>
+      </div>
+      <div class="making-item">
+        <div class="making-icon">📍</div>
+        <div class="making-title">Sammamish, WA</div>
+        <div class="making-desc">Where home is. Where the work happens, the kids run around, and the studio is slowly taking shape.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://waltercolindres.com" class="footer-logo">Walter <span>Colindres</span></a>
+  <a href="https://waltercolindres.com" class="footer-link">Back to waltercolindres.com</a>
+</footer>
+
+</body>
+</html>
