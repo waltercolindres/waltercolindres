@@ -35,6 +35,8 @@
     --green-dim: rgba(232,93,38,0.12);
     --blue: #e84d9a;
     --blue-dim: rgba(232,77,154,0.12);
+    --carolina: #4b9cd3;
+    --carolina-dim: rgba(75,156,211,0.15);
     --border-light: rgba(255,255,255,0.1);
   }
 
@@ -48,12 +50,19 @@
     flex-direction: column;
   }
 
-  /* PANELS — columns by default, fill remaining height */
+  /* PANELS — outer column, inner row for top 3 */
   .panels {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .panels-top {
     display: flex;
     flex-direction: row;
     flex: 1;
-    width: 100%;
     min-height: 0;
   }
 
@@ -71,8 +80,8 @@
     border-right: 1px solid var(--border-light);
   }
 
-  .panel:last-child { border-right: none; }
-  .panel:hover { flex: 1.6; }
+  .panels-top .panel:last-child { border-right: none; }
+  .panels-top .panel:hover { flex: 1.6; }
 
   /* PANEL BACKGROUNDS */
   .panel-consulting {
@@ -271,7 +280,7 @@
   .panel-title {
     font-family: 'Outfit', sans-serif;
     font-size: clamp(22px, 2.2vw, 36px);
-    font-weight: 400;
+    font-weight: 100;
     line-height: 1.1;
     letter-spacing: -0.5px;
     margin-bottom: 16px;
@@ -381,13 +390,78 @@
     text-transform: uppercase;
   }
 
+  /* CREATING panel — light, white/carolina blue */
+  .panel-creating {
+    background: #f0f6fc;
+    color: #1a1a18;
+    border-right: none;
+    border-top: 1px solid rgba(75,156,211,0.2);
+    flex: none;
+    height: clamp(240px, 46vh, 400px);
+    transition: none;
+  }
+
+  .panel-creating::before {
+    display: none;
+  }
+
+  .panel-creating .panel-num {
+    color: var(--carolina);
+  }
+
+  .panel-creating .panel-label-vert { color: var(--carolina); }
+
+  .panel-creating .panel-tag {
+    color: var(--carolina);
+  }
+
+  .panel-creating .panel-tag::before { background: var(--carolina); }
+
+  .panel-creating .panel-title {
+    color: #1a1a18;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: clamp(24px, 2.4vw, 40px);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  .panel-creating .panel-title em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--carolina);
+  }
+
+  .panel-creating .panel-desc {
+    color: rgba(26,26,24,0.55);
+  }
+
+  .panel-creating .panel-cta {
+    color: var(--carolina);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+
+  .panel-creating .panel-divider { background: var(--carolina); }
+
+  /* CREATING specific decoration */
+  .creating-label {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 10px;
+    color: var(--carolina);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
   /* DIVIDER LINE */
   .panel-divider {
     position: absolute;
     bottom: 0;
     left: 40px;
     right: 40px;
-    height: 1px;
+    height: 2px;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -434,12 +508,15 @@
     html, body { height: auto; overflow: auto; flex-direction: column; }
 
     .panels { flex-direction: column; flex: none; min-height: unset; }
+    .panels-top { flex-direction: column; }
 
     .panel {
       flex: none !important;
+      height: auto !important;
       min-height: 300px;
       padding: 32px 28px;
       border-right: none;
+      border-top: none;
       border-bottom: 1px solid var(--border-light);
       transition: none;
     }
@@ -450,9 +527,10 @@
     .panel-label-vert { display: none; }
     .panel-title { font-size: 24px; }
     .panel-desc { display: none; }
-    .consulting-stat, .terminal-line, .blog-date { top: 28px; right: 28px; }
+    .consulting-stat, .terminal-line, .blog-date, .blog-text, .creating-label { top: 28px; right: 28px; }
     .hub-header { padding: 0 24px; }
     .panel-promptlab { border-bottom-color: rgba(26,26,24,0.12); }
+    .panel-creating { border-bottom-color: rgba(75,156,211,0.2); }
   }
 </style>
 </head>
@@ -465,10 +543,11 @@
 
 <!-- PANELS -->
 <div class="panels">
+<div class="panels-top">
 
 <!-- PANEL 1 — CONSULTING -->
 <a href="https://consulting.waltercolindres.com" class="panel panel-consulting">
-  <div class="panel-num">01 / 03</div>
+  <div class="panel-num">01 / 04</div>
   <div class="consulting-stat">
     <!-- <div class="consulting-stat-num">$1B+</div> -->
     <div class="consulting-stat-label">Driving Digital sales</div>
@@ -484,7 +563,7 @@
 
 <!-- PANEL 2 — PROMPT LAB -->
 <a href="https://experimenting.waltercolindres.com" class="panel panel-promptlab">
-  <div class="panel-num">02 / 03</div>
+  <div class="panel-num">02 / 04</div>
   <div class="terminal-line">prompt-lab v2.0</div>
   <div class="panel-content">
     <div class="panel-tag">Experimenting</div>
@@ -497,18 +576,33 @@
 
 <!-- PANEL 3 — BLOG -->
 <a href="https://waltercolindres.notion.site/Hi-I-m-Walter-2cdcb92ed7e94387bafef9fb503a70c7" class="panel panel-blog">
-  <div class="panel-num">03 / 03</div>
+  <div class="panel-num">03 / 04</div>
   <div class="blog-text">Stream of Consciousness</div>
   <div class="panel-content">
     <div class="panel-tag">Writing</div>
-    <h2 class="panel-title">Notes on product,<br>oddities & <em>making things.</em></h2>
+    <h2 class="panel-title">Notes on product,<br>oddities & <em>building things.</em></h2>
     <p class="panel-desc">Thoughts on building digital products, leading PM teams, and the intersection of design, technology, and craft.</p>
     <div class="panel-cta">Enter site →</div>
   </div>
   <div class="panel-divider"></div>
 </a>
 
-</div>
+</div><!-- /panels-top -->
+
+<!-- PANEL 4 — CREATING -->
+<a href="#" class="panel panel-creating">
+  <div class="panel-num">04 / 04</div>
+  <div class="creating-label">oil · digital</div>
+  <div class="panel-content">
+    <div class="panel-tag">Creating</div>
+    <h2 class="panel-title">Pushing a brush or pixel,<br>always <em>creating.</em></h2>
+    <p class="panel-desc">Digital art, oil painting, and whatever medium fits the idea — creativity without constraints.</p>
+    <div class="panel-cta">View work →</div>
+  </div>
+  <div class="panel-divider"></div>
+</a>
+
+</div><!-- /panels -->
 
 </body>
 </html>
