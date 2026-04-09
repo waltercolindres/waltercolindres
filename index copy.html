@@ -40,18 +40,12 @@
     --border-light: rgba(255,255,255,0.1);
   }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    scroll-padding-top: 52px;
-    overflow-y: scroll;
+  html, body {
     height: 100%;
-  }
-
-  body {
     background: #060606;
     color: var(--white);
     font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
   }
@@ -60,14 +54,16 @@
   .panels {
     display: flex;
     flex-direction: column;
+    flex: 1;
     width: 100%;
+    min-height: 0;
   }
 
   .panels-top {
     display: flex;
     flex-direction: row;
-    height: calc(100vh - 52px);
-    scroll-snap-align: start;
+    flex: 1;
+    min-height: 0;
   }
 
   .panel {
@@ -330,7 +326,7 @@
   /* PROMPT LAB specific — editorial monospace decoration */
   .terminal-line {
     position: absolute;
-    top: 42px;
+    top: 40px;
     right: 40px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -374,7 +370,7 @@
   }
 
   .consulting-stat-label {
-    font-size: 10px;
+    font-size: 9px;
     color: rgba(250,250,247,0.25);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -401,8 +397,7 @@
     border-right: none;
     border-top: 1px solid rgba(140,123,107,0.2);
     flex: none;
-    height: calc(100vh - 52px);
-    scroll-snap-align: start;
+    height: clamp(240px, 46vh, 400px);
     transition: none;
   }
 
@@ -418,7 +413,7 @@
 
   .panel-creating .panel-num {
     color: #2c2418;
-    opacity: 0.75;
+    opacity: 0.25;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
   }
@@ -427,7 +422,7 @@
 
   .panel-creating .panel-tag {
     color: var(--bronze);
-    font-family: 'Syne', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
     letter-spacing: 0.35em;
   }
@@ -457,12 +452,8 @@
     line-height: 1.8;
   }
 
-  .panel-creating {
-    cursor: default;
-  }
-
   .panel-creating .panel-cta {
-    color: rgba(140,123,107,1);
+    color: var(--bronze);
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
     font-size: 10px;
@@ -480,7 +471,7 @@
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     font-size: 10px;
-    color: rgba(140,123,107,1);
+    color: rgba(140,123,107,0.7);
     letter-spacing: 0.25em;
     text-transform: uppercase;
   }
@@ -512,8 +503,7 @@
     height: 52px;
     background: #060606;
     border-bottom: 1px solid var(--border-light);
-    position: sticky;
-    top: 0;
+    flex-shrink: 0;
     z-index: 100;
   }
 
@@ -536,10 +526,10 @@
 
   /* MOBILE — stack as rows */
   @media (max-width: 768px) {
-    html { scroll-snap-type: none; }
-    .panels { flex-direction: column; }
-    .panels-top { flex-direction: column; height: auto; scroll-snap-align: none; }
-    .panel-creating { scroll-snap-align: none; }
+    html, body { height: auto; overflow: auto; flex-direction: column; }
+
+    .panels { flex-direction: column; flex: none; min-height: unset; }
+    .panels-top { flex-direction: column; }
 
     .panel {
       flex: none !important;
@@ -585,7 +575,7 @@
   </div>
   <div class="panel-content">
     <div class="panel-tag">Consulting</div>
-    <h2 class="panel-title">Digital that<br>drives <em>real revenue.</em></h2>
+    <h2 class="panel-title">QSR digital that<br>drives <em>real revenue.</em></h2>
     <p class="panel-desc">15 years inside QSR — app rebuilds, loyalty platforms, fraud systems, and order management at national scale.</p>
     <div class="panel-cta">Enter site →</div>
   </div>
@@ -621,17 +611,17 @@
 </div><!-- /panels-top -->
 
 <!-- PANEL 4 — CREATING -->
-<div class="panel panel-creating">
+<a href="#" class="panel panel-creating">
   <div class="panel-num">04 / 04</div>
-  <div class="creating-label">painter · charcoal · digital</div>
+  <div class="creating-label">painter · printmaker · mixed media</div>
   <div class="panel-content">
     <div class="panel-tag">Creating</div>
     <h2 class="panel-title">Pushing a brush or pixel,<br>always <em>creating.</em></h2>
     <p class="panel-desc">Digital art, oil painting, and whatever medium fits the idea — creativity without constraints.</p>
-    <div class="panel-cta">Coming soon</div>
+    <div class="panel-cta">View work →</div>
   </div>
   <div class="panel-divider"></div>
-</div>
+</a>
 
 </div><!-- /panels -->
 
