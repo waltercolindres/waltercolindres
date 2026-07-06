@@ -23,11 +23,6 @@
 <meta name="twitter:description" content="Product leader, builder, and creator. This is the hub for everything I'm working on.">
 
 <title>Walter Colindres</title>
-<link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon/favicon-64.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon-180.png">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:wght@900&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;700&family=Josefin+Sans:wght@100;300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,18 +40,12 @@
     --border-light: rgba(255,255,255,0.1);
   }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    scroll-padding-top: 52px;
-    overflow-y: scroll;
+  html, body {
     height: 100%;
-  }
-
-  body {
     background: #060606;
     color: var(--white);
     font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
   }
@@ -65,14 +54,16 @@
   .panels {
     display: flex;
     flex-direction: column;
+    flex: 1;
     width: 100%;
+    min-height: 0;
   }
 
   .panels-top {
     display: flex;
     flex-direction: row;
-    height: calc(100vh - 52px);
-    scroll-snap-align: start;
+    flex: 1;
+    min-height: 0;
   }
 
   .panel {
@@ -94,16 +85,14 @@
 
   /* PANEL BACKGROUNDS */
   .panel-consulting {
-    background: #07071a;
+    background: #0a0a0a;
   }
 
   .panel-consulting::before {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(ellipse at 65% 0%, rgba(232,22,42,0.15) 0%, transparent 55%),
-      radial-gradient(ellipse at 15% 85%, rgba(232,22,42,0.06) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 60% 0%, rgba(232,22,42,0.18) 0%, transparent 65%);
     pointer-events: none;
   }
 
@@ -337,7 +326,7 @@
   /* PROMPT LAB specific — editorial monospace decoration */
   .terminal-line {
     position: absolute;
-    top: 42px;
+    top: 40px;
     right: 40px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -381,7 +370,7 @@
   }
 
   .consulting-stat-label {
-    font-size: 10px;
+    font-size: 9px;
     color: rgba(250,250,247,0.25);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -408,8 +397,7 @@
     border-right: none;
     border-top: 1px solid rgba(140,123,107,0.2);
     flex: none;
-    height: calc(100vh - 52px);
-    scroll-snap-align: start;
+    height: clamp(240px, 46vh, 400px);
     transition: none;
   }
 
@@ -425,7 +413,7 @@
 
   .panel-creating .panel-num {
     color: #2c2418;
-    opacity: 0.75;
+    opacity: 0.25;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
   }
@@ -434,7 +422,7 @@
 
   .panel-creating .panel-tag {
     color: var(--bronze);
-    font-family: 'Syne', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
     letter-spacing: 0.35em;
   }
@@ -464,12 +452,8 @@
     line-height: 1.8;
   }
 
-  .panel-creating {
-    cursor: default;
-  }
-
   .panel-creating .panel-cta {
-    color: rgba(140,123,107,1);
+    color: var(--bronze);
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 300;
     font-size: 10px;
@@ -487,7 +471,7 @@
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     font-size: 10px;
-    color: rgba(140,123,107,1);
+    color: rgba(140,123,107,0.7);
     letter-spacing: 0.25em;
     text-transform: uppercase;
   }
@@ -519,8 +503,7 @@
     height: 52px;
     background: #060606;
     border-bottom: 1px solid var(--border-light);
-    position: sticky;
-    top: 0;
+    flex-shrink: 0;
     z-index: 100;
   }
 
@@ -543,10 +526,10 @@
 
   /* MOBILE — stack as rows */
   @media (max-width: 768px) {
-    html { scroll-snap-type: none; }
-    .panels { flex-direction: column; }
-    .panels-top { flex-direction: column; height: auto; scroll-snap-align: none; }
-    .panel-creating { scroll-snap-align: none; }
+    html, body { height: auto; overflow: auto; flex-direction: column; }
+
+    .panels { flex-direction: column; flex: none; min-height: unset; }
+    .panels-top { flex-direction: column; }
 
     .panel {
       flex: none !important;
@@ -576,7 +559,7 @@
 
 <header class="hub-header">
   <div class="hub-logo"><span>Walter</span> Colindres</div>
-  <a href="about.html" class="hub-tagline" style="text-decoration:none; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color=''">ABOUT ME</a>
+  <a href="about.html" class="hub-tagline" style="text-decoration:none; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color=''">About Me</a>
 </header>
 
 <!-- PANELS -->
@@ -592,7 +575,7 @@
   </div>
   <div class="panel-content">
     <div class="panel-tag">Consulting</div>
-    <h2 class="panel-title">Digital that<br>drives <em>real revenue.</em></h2>
+    <h2 class="panel-title">QSR digital that<br>drives <em>real revenue.</em></h2>
     <p class="panel-desc">15 years inside QSR — app rebuilds, loyalty platforms, fraud systems, and order management at national scale.</p>
     <div class="panel-cta">Enter site →</div>
   </div>
@@ -628,17 +611,17 @@
 </div><!-- /panels-top -->
 
 <!-- PANEL 4 — CREATING -->
-<div class="panel panel-creating">
+<a href="#" class="panel panel-creating">
   <div class="panel-num">04 / 04</div>
-  <div class="creating-label">painter · charcoal · digital</div>
+  <div class="creating-label">painter · printmaker · mixed media</div>
   <div class="panel-content">
     <div class="panel-tag">Creating</div>
     <h2 class="panel-title">Pushing a brush or pixel,<br>always <em>creating.</em></h2>
     <p class="panel-desc">Digital art, oil painting, and whatever medium fits the idea — creativity without constraints.</p>
-    <div class="panel-cta">Coming soon</div>
+    <div class="panel-cta">View work →</div>
   </div>
   <div class="panel-divider"></div>
-</div>
+</a>
 
 </div><!-- /panels -->
 
