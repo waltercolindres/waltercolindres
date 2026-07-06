@@ -1,7 +1,7 @@
 # Walter Colindres
-### Director of Product · Builder · AI-Native
+### Sr. Director of Product & Digital · Builder · AI-Native
 
-I'm a product leader and builder with 12+ years shipping digital commerce at scale — QSR, SMB SaaS, and consumer platforms. I have front-end engineering roots, which means I don't just write the PRD; I prototype, build, and ship.
+I'm a product leader and builder with 12+ years shipping digital commerce at scale — QSR, SMB SaaS, and consumer platforms. I have design and front-end engineering roots, which means I don't just write the PRD; I prototype, build, and ship.
 
 Currently at **Jack in the Box** leading digital ordering, loyalty, mobile, and payments — and building internal AI tools that compress weeks of PM work into hours.
 
@@ -11,8 +11,8 @@ Currently at **Jack in the Box** leading digital ordering, loyalty, mobile, and 
 
 | Product | Stack | What it does |
 |---|---|---|
-| **QSR Digital Advisor** | Astro · Vercel · Upstash Redis | AI assistant trained on QSR digital context — answers product, ops, and strategy questions |
-| **JIB Product Hub** | GitHub · AI-powered | Internal intranet for PRDs, prototypes, and product decision artifacts |
+| **QSR Digital Advisor** | Astro · Vercel · Upstash Redis Prototype  | AI assistant trained on QSR digital context — answers product, ops, and strategy questions |
+| **JIB Product Hub** | GitHub · AI-powered Prototype | Internal intranet for PRDs, prototypes, and product decision artifacts |
 | **Prompt Lab** | — | Portfolio of AI-native PM workflows — PRDs, research synthesis, spec generation |
 
 ---
@@ -35,7 +35,7 @@ $200MM+  Apple / Google Pay volume
 
 **Daily workflow — not experimentation:**
 
-`Claude` `Cursor` `Lovable` `v0` `Replit` `Figma`
+`Claude` `Figma`
 
 **Technical foundation:**
 
