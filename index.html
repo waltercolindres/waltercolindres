@@ -137,11 +137,6 @@
     position: relative;
     top: 0.05em;
   }
-    font-family: 'Instrument Serif', serif;
-    color: #1a1a18;
-    opacity: 0.04;
-    letter-spacing: -4px;
-  }
 
   .panel-promptlab .panel-tag {
     color: #888880;
@@ -550,7 +545,8 @@
   /* MOBILE — stack as rows */
   @media (max-width: 768px) {
     html { scroll-snap-type: none; }
-    .panels { flex-direction: column; }
+    body { min-height: 100vh; min-height: 100dvh; }
+    .panels { flex-direction: column; flex: 1; }
     .panels-top { flex-direction: column; height: auto; scroll-snap-align: none; }
     .panel-creating { scroll-snap-align: none; }
 
@@ -574,7 +570,7 @@
     .consulting-stat, .terminal-line, .blog-date, .blog-text, .creating-label { top: 28px; right: 28px; }
     .hub-header { padding: 0 24px; }
     .panel-promptlab { border-bottom-color: rgba(26,26,24,0.12); }
-    .panel-creating { border-bottom-color: rgba(140,123,107,0.2); }
+    .panel-creating { border-bottom-color: rgba(140,123,107,0.2); flex: 1 !important; }
   }
 </style>
 </head>
