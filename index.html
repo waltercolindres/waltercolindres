@@ -28,7 +28,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon/favicon-64.png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon-180.png">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:wght@900&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;700&family=Josefin+Sans:wght@100;300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Instrument+Serif:ital@0;1&family=Playfair+Display:wght@400;900&family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;700&family=Josefin+Sans:wght@100;300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -94,7 +94,7 @@
 
   /* PANEL BACKGROUNDS */
   .panel-consulting {
-    background: #07071a;
+    background: #0a0a0a;
   }
 
   .panel-consulting::before {
@@ -303,7 +303,13 @@
     font-style: italic;
   }
 
-  .panel-consulting .panel-title em { color: var(--red); }
+  .panel-consulting .panel-title { font-weight: 400; }
+  .panel-consulting .panel-title em {
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--red);
+  }
   .panel-promptlab .panel-title em { color: #c8372d; }
   .panel-blog .panel-title em { color: var(--blue); }
 
