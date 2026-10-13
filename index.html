@@ -286,7 +286,8 @@
     letter-spacing: 0.2em;
     font-size: clamp(26px, 3vw, 48px);
   }
-  .entry-creating .entry-name em { font-style: normal; font-weight: 300; }
+  .entry-creating:hover .entry-name,
+  .entry-creating:focus-visible .entry-name { color: var(--hue); }
 
   /* App Reviews — matches reviews.waltercolindres.com: same treatment as Notes */
   .entry-reviews { --hue: var(--red); }
@@ -359,7 +360,7 @@
 
   <div class="entry entry-creating entry-soon">
     <div class="entry-num">04</div>
-    <h2 class="entry-name">Creat<em>ing</em></h2>
+    <h2 class="entry-name">Creating</h2>
     <div class="entry-aside">
       <span class="entry-kicker">Painter · charcoal · digital</span>
       Pushing a brush or pixel, always creating.
