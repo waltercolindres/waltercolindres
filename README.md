@@ -52,7 +52,7 @@ Restaurant Brands     →  Senior PM, Digital & Mobile (3 brands, $2B+ digital s
 VistaPrint            →  Director of Product, Growth & Retention (SMB SaaS)
 The Walt Disney Co.   →  Senior PM, Next Gen Storytelling
 Navalia               →  Product Leadership Consultant
-Jack in the Box       →  Director of Product Management (current)
+Jack in the Box       →  Senior Director of Product & Digital (current)
 ```
 
 ---
