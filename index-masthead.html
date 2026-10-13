@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Walter Colindres — product leader, builder, and creator. This is the hub for everything I'm working on: consulting, experiments, and writing.">
+<meta name="description" content="Walter Colindres — product leader, builder, and creator. This is the hub for everything I'm working on: consulting, experiments, and notes.">
 <meta name="keywords" content="Walter Colindres, product leader, digital product, consulting, prompt lab, QSR, building things">
 <meta name="robots" content="noindex, follow">
 <meta name="author" content="Walter Colindres">
@@ -38,7 +38,6 @@
     --white: #fafaf7;
     --red: #e8162a;
     --rust: #c8372d;
-    --pink: #e84d9a;
     --bronze: #c0845a;
     --amber: #ffb020;
     --rule: rgba(10,10,10,0.12);
@@ -259,9 +258,10 @@
   }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-  .entry-writing { --hue: var(--pink); }
-  .entry-writing .entry-name { font-family: 'Instrument Serif', serif; font-style: italic; }
-  .entry-writing:hover .entry-name, .entry-writing:focus-visible .entry-name { color: var(--hue); }
+  /* Notes — matches notes.waltercolindres.com: DM Sans headline, red Playfair period */
+  .entry-notes { --hue: var(--red); }
+  .entry-notes .entry-name { font-family: 'DM Sans', sans-serif; font-weight: 400; letter-spacing: -0.03em; }
+  .entry-notes .entry-name em { font-family: 'Playfair Display', serif; font-style: normal; }
 
   .entry-creating { --hue: var(--bronze); }
   .entry-creating .entry-name {
@@ -302,7 +302,7 @@
   <div>
     <div class="intro-label">Product leader · Builder · Creator</div>
     <h1 class="intro-name"><span>Walter</span>Colindres</h1>
-    <p class="intro-tagline">This is the hub for everything I'm working on: consulting, experiments, writing, and making things.</p>
+    <p class="intro-tagline">This is the hub for everything I'm working on: consulting, experiments, notes, and making things.</p>
   </div>
   <a href="about.html" class="intro-about">About me →</a>
 </header>
@@ -332,12 +332,12 @@
     </div>
   </a>
 
-  <a href="https://waltercolindres.notion.site/Hi-I-m-Walter-2cdcb92ed7e94387bafef9fb503a70c7" class="entry entry-writing">
+  <a href="https://notes.waltercolindres.com" class="entry entry-notes">
     <div class="entry-num">03</div>
-    <h2 class="entry-name">Writing</h2>
+    <h2 class="entry-name">Notes<em>.</em></h2>
     <div class="entry-aside">
-      <span class="entry-kicker">Stream of consciousness</span>
-      Notes on product, oddities &amp; building things.
+      <span class="entry-kicker">Product &amp; Leadership</span>
+      Notes on product leadership and leading teams.
       <span class="entry-cta">Enter site →</span>
     </div>
   </a>
