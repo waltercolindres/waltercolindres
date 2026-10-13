@@ -39,7 +39,6 @@
     --red: #e8162a;
     --rust: #c8372d;
     --bronze: #c0845a;
-    --amber: #ffb020;
     --rule: rgba(10,10,10,0.12);
     --muted: rgba(10,10,10,0.5);
   }
@@ -273,10 +272,10 @@
   }
   .entry-creating .entry-name em { font-style: normal; font-weight: 300; }
 
-  .entry-reviews { --hue: var(--amber); }
-  .entry-stars { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; }
-  .entry-reviews .entry-name { font-family: 'DM Sans', sans-serif; font-weight: 300; letter-spacing: -0.02em; }
-  .entry-reviews .entry-name em { font-family: 'Instrument Serif', serif; }
+  /* App Reviews — matches reviews.waltercolindres.com: same treatment as Notes */
+  .entry-reviews { --hue: var(--red); }
+  .entry-reviews .entry-name { font-family: 'DM Sans', sans-serif; font-weight: 400; letter-spacing: -0.03em; }
+  .entry-reviews .entry-name em { font-family: 'Playfair Display', serif; font-style: normal; }
 
   /* MOBILE */
   @media (max-width: 860px) {
@@ -354,10 +353,10 @@
 
   <div class="entry entry-reviews entry-soon">
     <div class="entry-num">05</div>
-    <h2 class="entry-name">App <em>Reviews</em></h2>
+    <h2 class="entry-name">App Reviews<em>.</em></h2>
     <div class="entry-aside">
-      <span class="entry-kicker entry-stars">★★★★☆</span>
-      What the app store is really saying.
+      <span class="entry-kicker">See the app. Then the verdict.</span>
+      Screen recordings, screenshots, and a straight take from someone who has shipped apps at scale.
       <span class="entry-cta">Coming soon</span>
     </div>
   </div>
