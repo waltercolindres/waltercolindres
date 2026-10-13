@@ -128,15 +128,18 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 100vh;
   }
 
   .panel {
+    flex: 1 1 auto;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    min-height: 300px;
-    padding: 96px 48px 40px;
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    grid-template-areas: "num content side";
+    align-items: center;
+    column-gap: 32px;
+    padding: 32px 48px;
     cursor: pointer;
     text-decoration: none;
     overflow: hidden;
@@ -203,7 +206,7 @@
     color: #1a1a18;
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(28px, 2.8vw, 46px);
+    font-size: clamp(22px, 2.1vw, 32px);
     letter-spacing: -0.02em;
     line-height: 0.92;
   }
@@ -247,9 +250,9 @@
 
   /* PANEL NUMBER */
   .panel-num {
-    position: absolute;
-    top: 40px;
-    left: 48px;
+    grid-area: num;
+    align-self: start;
+    padding-top: 2px;
     font-family: 'Syne', sans-serif;
     font-size: 11px;
     font-weight: 700;
@@ -263,8 +266,24 @@
 
   /* CONTENT */
   .panel-content {
+    grid-area: content;
     position: relative;
     z-index: 2;
+    min-width: 0;
+  }
+
+  /* Right-hand side of each row: label + link */
+  .panel-side {
+    grid-area: side;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    align-self: stretch;
+    gap: 16px;
+    text-align: right;
   }
 
   .panel-tag {
@@ -273,7 +292,7 @@
     font-weight: 700;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -295,11 +314,11 @@
 
   .panel-title {
     font-family: 'Outfit', sans-serif;
-    font-size: clamp(22px, 2.2vw, 36px);
+    font-size: clamp(20px, 1.8vw, 28px);
     font-weight: 100;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.5px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     color: var(--white);
   }
 
@@ -322,8 +341,7 @@
     font-size: 13px;
     color: rgba(250,250,247,0.5);
     line-height: 1.7;
-    max-width: 420px;
-    margin-bottom: 28px;
+    max-width: 460px;
     transition: opacity 0.3s;
   }
 
@@ -336,6 +354,7 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    white-space: nowrap;
     transition: gap 0.2s;
   }
 
@@ -347,9 +366,6 @@
 
   /* PROMPT LAB specific — editorial monospace decoration */
   .terminal-line {
-    position: absolute;
-    top: 42px;
-    right: 48px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: #888880;
@@ -375,9 +391,6 @@
 
   /* CONSULTING specific decoration */
   .consulting-stat {
-    position: absolute;
-    top: 40px;
-    right: 48px;
     text-align: right;
   }
 
@@ -401,9 +414,6 @@
 
   /* BLOG specific decoration */
   .blog-text {
-    position: absolute;
-    top: 40px;
-    right: 48px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: var(--blue);
@@ -449,7 +459,7 @@
     color: #2c2418;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
-    font-size: clamp(26px, 2.6vw, 44px);
+    font-size: clamp(16px, 1.4vw, 22px);
     letter-spacing: 0.2em;
     text-transform: uppercase;
     line-height: 1.2;
@@ -485,9 +495,6 @@
 
   /* CREATING specific decoration */
   .creating-label {
-    position: absolute;
-    top: 40px;
-    right: 48px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     font-size: 10px;
@@ -539,9 +546,6 @@
   .panel-reviews .panel-divider { background: var(--amber); }
 
   .reviews-stars {
-    position: absolute;
-    top: 38px;
-    right: 48px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.2em;
@@ -565,15 +569,21 @@
     .intro-label { margin-bottom: 24px; }
     .intro-name { font-size: 52px; }
 
+    .panels { min-height: 0; }
+
     .panel {
-      min-height: 280px;
-      padding: 80px 24px 32px;
+      grid-template-columns: 1fr;
+      grid-template-areas: "content" "side";
+      row-gap: 16px;
+      padding: 28px 24px;
     }
 
-    .panel-num { top: 28px; left: 24px; }
-    .panel-title { font-size: 24px; }
-    .panel-desc { display: none; }
-    .consulting-stat, .terminal-line, .blog-text, .creating-label, .reviews-stars { top: 28px; right: 24px; }
+    .panel-num { display: none; }
+    .panel-side { flex-direction: row; justify-content: space-between; align-items: center; width: 100%; text-align: left; }
+    .panel-side > div { white-space: nowrap; }
+    .panel-title { font-size: 22px; }
+    .panel-promptlab .panel-title { font-size: 26px; }
+    .panel-creating .panel-title { font-size: 16px; }
     .panel-divider { left: 24px; right: 24px; }
   }
 </style>
@@ -597,15 +607,17 @@
 
 <!-- PANEL 1 — CONSULTING -->
 <a href="https://consulting.waltercolindres.com" class="panel panel-consulting">
-  <div class="panel-num">01 / 05</div>
-  <div class="consulting-stat">
-    <!-- <div class="consulting-stat-num">$1B+</div> -->
-    <div class="consulting-stat-label">Driving Digital sales</div>
-  </div>
+  <div class="panel-num">01</div>
   <div class="panel-content">
     <div class="panel-tag">Consulting</div>
-    <h2 class="panel-title">Digital that<br>drives <em>real revenue.</em></h2>
+    <h2 class="panel-title">Digital that drives <em>real revenue.</em></h2>
     <p class="panel-desc">15 years inside QSR — app rebuilds, loyalty platforms, fraud systems, and order management at national scale.</p>
+  </div>
+  <div class="panel-side">
+    <div class="consulting-stat">
+      <!-- <div class="consulting-stat-num">$1B+</div> -->
+      <div class="consulting-stat-label">Driving Digital sales</div>
+    </div>
     <div class="panel-cta">Enter site →</div>
   </div>
   <div class="panel-divider"></div>
@@ -613,12 +625,14 @@
 
 <!-- PANEL 2 — PROMPT LAB -->
 <a href="https://experimenting.waltercolindres.com" class="panel panel-promptlab">
-  <div class="panel-num">02 / 05</div>
-  <div class="terminal-line">prompt-lab v2.0</div>
+  <div class="panel-num">02</div>
   <div class="panel-content">
     <div class="panel-tag">Experimenting</div>
-    <h2 class="panel-title">Prompt<br><em>Lab</em><span class="cursor"></span></h2>
+    <h2 class="panel-title">Prompt <em>Lab</em><span class="cursor"></span></h2>
     <p class="panel-desc">Claude skills, PRDs, prototypes, and AI-powered tools — built for real product work.</p>
+  </div>
+  <div class="panel-side">
+    <div class="terminal-line">prompt-lab v2.0</div>
     <div class="panel-cta">VIEW PROJECTS →</div>
   </div>
   <div class="panel-divider"></div>
@@ -626,12 +640,14 @@
 
 <!-- PANEL 3 — BLOG -->
 <a href="https://waltercolindres.notion.site/Hi-I-m-Walter-2cdcb92ed7e94387bafef9fb503a70c7" class="panel panel-blog">
-  <div class="panel-num">03 / 05</div>
-  <div class="blog-text">Stream of Consciousness</div>
+  <div class="panel-num">03</div>
   <div class="panel-content">
     <div class="panel-tag">Writing</div>
-    <h2 class="panel-title">Notes on product,<br>oddities & <em>building things.</em></h2>
+    <h2 class="panel-title">Notes on product, oddities & <em>building things.</em></h2>
     <p class="panel-desc">Thoughts on building digital products, leading PM teams, and the intersection of design, technology, and craft.</p>
+  </div>
+  <div class="panel-side">
+    <div class="blog-text">Stream of Consciousness</div>
     <div class="panel-cta">Enter site →</div>
   </div>
   <div class="panel-divider"></div>
@@ -639,12 +655,14 @@
 
 <!-- PANEL 4 — CREATING -->
 <div class="panel panel-creating">
-  <div class="panel-num">04 / 05</div>
-  <div class="creating-label">painter · charcoal · digital</div>
+  <div class="panel-num">04</div>
   <div class="panel-content">
     <div class="panel-tag">Creating</div>
-    <h2 class="panel-title">Pushing a brush or pixel,<br>always <em>creating.</em></h2>
+    <h2 class="panel-title">Pushing a brush or pixel, always <em>creating.</em></h2>
     <p class="panel-desc">Digital art, oil painting, and whatever medium fits the idea — creativity without constraints.</p>
+  </div>
+  <div class="panel-side">
+    <div class="creating-label">painter · charcoal · digital</div>
     <div class="panel-cta">Coming soon</div>
   </div>
   <div class="panel-divider"></div>
@@ -652,12 +670,14 @@
 
 <!-- PANEL 5 — APP REVIEWS -->
 <div class="panel panel-reviews">
-  <div class="panel-num">05 / 05</div>
-  <div class="reviews-stars">★★★★☆</div>
+  <div class="panel-num">05</div>
   <div class="panel-content">
     <div class="panel-tag">App Reviews</div>
-    <h2 class="panel-title">What the app store<br>is <em>really saying.</em></h2>
+    <h2 class="panel-title">What the app store is <em>really saying.</em></h2>
     <p class="panel-desc">Teardowns of real app reviews — what customers love, what they hate, and what product teams should hear.</p>
+  </div>
+  <div class="panel-side">
+    <div class="reviews-stars">★★★★☆</div>
     <div class="panel-cta">Coming soon</div>
   </div>
   <div class="panel-divider"></div>
