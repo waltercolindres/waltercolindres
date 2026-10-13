@@ -42,55 +42,108 @@
     --blue-dim: rgba(232,77,154,0.12);
     --bronze: #c0845a;
     --bronze-dim: rgba(192,132,90,0.1);
+    --amber: #ffb020;
     --border-light: rgba(255,255,255,0.1);
   }
 
   html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    scroll-padding-top: 52px;
-    overflow-y: scroll;
-    height: 100%;
   }
 
   body {
     background: #060606;
     color: var(--white);
     font-family: 'DM Sans', sans-serif;
-    display: flex;
-    flex-direction: column;
   }
 
-  /* PANELS — outer column, inner row for top 3 */
+  /* LAYOUT — name on the left, list of panels on the right */
+  .hub {
+    display: grid;
+    grid-template-columns: minmax(320px, 2fr) 3fr;
+    min-height: 100vh;
+  }
+
+  /* INTRO — sticky left column */
+  .intro {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 56px;
+    border-right: 1px solid var(--border-light);
+  }
+
+  .intro-name {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    font-size: clamp(48px, 5.6vw, 96px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: rgba(250,250,247,0.45);
+  }
+
+  .intro-name span {
+    display: block;
+    color: var(--white);
+  }
+
+  .intro-tagline {
+    margin-top: 28px;
+    max-width: 340px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(250,250,247,0.45);
+  }
+
+  .intro-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(250,250,247,0.3);
+    margin-bottom: 40px;
+  }
+
+  .intro-about {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(250,250,247,0.5);
+    text-decoration: none;
+    transition: color 0.2s, gap 0.2s;
+  }
+
+  .intro-about:hover { color: var(--white); gap: 16px; }
+
+  /* PANELS — vertical list */
   .panels {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
 
-  .panels-top {
-    display: flex;
-    flex-direction: row;
-    height: calc(100vh - 52px);
-    scroll-snap-align: start;
-  }
-
   .panel {
-    flex: 1;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 48px 40px;
+    min-height: 300px;
+    padding: 96px 48px 40px;
     cursor: pointer;
     text-decoration: none;
     overflow: hidden;
-    transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    border-right: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
   }
 
-  .panels-top .panel:last-child { border-right: none; }
-  .panels-top .panel:hover { flex: 1.6; }
+  .panel:last-child { border-bottom: none; }
 
   /* PANEL BACKGROUNDS */
   .panel-consulting {
@@ -110,7 +163,7 @@
   .panel-promptlab {
     background: #f0ede6;
     color: #1a1a18;
-    border-right-color: rgba(26,26,24,0.12);
+    border-bottom-color: rgba(26,26,24,0.12);
   }
 
   .panel-promptlab::before {
@@ -124,8 +177,6 @@
     font-family: 'JetBrains Mono', monospace;
     font-weight: 400;
   }
-
-  .panel-promptlab .panel-label-vert { color: #c8372d; }
 
   .panel-promptlab .panel-title .cursor {
     width: 10px;
@@ -198,7 +249,7 @@
   .panel-num {
     position: absolute;
     top: 40px;
-    left: 40px;
+    left: 48px;
     font-family: 'Syne', sans-serif;
     font-size: 11px;
     font-weight: 700;
@@ -209,47 +260,6 @@
   .panel-consulting .panel-num { color: var(--red); }
   .panel-promptlab .panel-num { color: #c8372d; }
   .panel-blog .panel-num { color: var(--blue); }
-
-  /* VERTICAL LABEL */
-  .panel-label-vert {
-    position: absolute;
-    top: 50%;
-    left: 40px;
-    transform: translateY(-50%) rotate(-90deg);
-    transform-origin: center center;
-    font-family: 'Syne', sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    opacity: 0;
-    transition: opacity 0.3s;
-    white-space: nowrap;
-  }
-
-  .panel-consulting .panel-label-vert { color: var(--red); }
-  .panel-promptlab .panel-label-vert { color: #c8372d; }
-  .panel-blog .panel-label-vert { color: var(--blue); }
-
-  /* LARGE BG LETTER */
-  .panel-bg-letter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: clamp(180px, 20vw, 280px);
-    line-height: 1;
-    letter-spacing: -10px;
-    opacity: 0.03;
-    pointer-events: none;
-    white-space: nowrap;
-    transition: opacity 0.4s;
-    user-select: none;
-  }
-
-  .panel:hover .panel-bg-letter { opacity: 0.06; }
 
   /* CONTENT */
   .panel-content {
@@ -312,8 +322,8 @@
     font-size: 13px;
     color: rgba(250,250,247,0.5);
     line-height: 1.7;
-    max-width: 280px;
-    margin-bottom: 32px;
+    max-width: 420px;
+    margin-bottom: 28px;
     transition: opacity 0.3s;
   }
 
@@ -339,7 +349,7 @@
   .terminal-line {
     position: absolute;
     top: 42px;
-    right: 40px;
+    right: 48px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: #888880;
@@ -367,7 +377,7 @@
   .consulting-stat {
     position: absolute;
     top: 40px;
-    right: 40px;
+    right: 48px;
     text-align: right;
   }
 
@@ -393,7 +403,7 @@
   .blog-text {
     position: absolute;
     top: 40px;
-    right: 40px;
+    right: 48px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: var(--blue);
@@ -406,12 +416,7 @@
   .panel-creating {
     background: #f5f0ea;
     color: #2c2418;
-    border-right: none;
-    border-top: 1px solid rgba(140,123,107,0.2);
-    flex: none;
-    height: calc(100vh - 52px);
-    scroll-snap-align: start;
-    transition: none;
+    border-bottom-color: rgba(140,123,107,0.2);
   }
 
   .panel-creating::before {
@@ -430,8 +435,6 @@
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
   }
-
-  .panel-creating .panel-label-vert { color: var(--bronze); }
 
   .panel-creating .panel-tag {
     color: var(--bronze);
@@ -484,7 +487,7 @@
   .creating-label {
     position: absolute;
     top: 40px;
-    right: 40px;
+    right: 48px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     font-size: 10px;
@@ -497,8 +500,8 @@
   .panel-divider {
     position: absolute;
     bottom: 0;
-    left: 40px;
-    right: 40px;
+    left: 48px;
+    right: 48px;
     height: 2px;
     transform: scaleX(0);
     transform-origin: left;
@@ -511,83 +514,90 @@
 
   .panel:hover .panel-divider { transform: scaleX(1); }
 
-  /* HEADER BAR */
-  .hub-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    height: 52px;
-    background: #060606;
-    border-bottom: 1px solid var(--border-light);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  /* APP REVIEWS panel — dark, amber */
+  .panel-reviews {
+    background: #0b0a06;
+    cursor: default;
   }
 
-  .hub-logo {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(250,250,247,0.5);
+  .panel-reviews::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 85% 0%, rgba(255,176,32,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 10% 90%, rgba(255,176,32,0.05) 0%, transparent 50%);
+    pointer-events: none;
   }
 
-  .hub-logo span { color: var(--white); }
+  .panel-reviews .panel-num { color: var(--amber); }
+  .panel-reviews .panel-tag { color: var(--amber); }
+  .panel-reviews .panel-tag::before { background: var(--amber); }
+  .panel-reviews .panel-title { font-family: 'DM Sans', sans-serif; font-weight: 300; }
+  .panel-reviews .panel-title em { color: var(--amber); }
+  .panel-reviews .panel-cta { color: var(--amber); }
+  .panel-reviews .panel-divider { background: var(--amber); }
 
-  .hub-tagline {
-    font-size: 11px;
-    color: rgba(250,250,247,0.25);
-    letter-spacing: 0.08em;
+  .reviews-stars {
+    position: absolute;
+    top: 38px;
+    right: 48px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--amber);
+    opacity: 0.5;
   }
 
-  /* MOBILE — stack as rows */
-  @media (max-width: 768px) {
-    html { scroll-snap-type: none; }
-    body { min-height: 100vh; min-height: 100dvh; }
-    .panels { flex-direction: column; flex: 1; }
-    .panels-top { flex-direction: column; height: auto; scroll-snap-align: none; }
-    .panel-creating { scroll-snap-align: none; }
+  /* MOBILE — single column */
+  @media (max-width: 860px) {
+    .hub { grid-template-columns: 1fr; }
 
-    .panel {
-      flex: none !important;
-      height: auto !important;
-      min-height: 300px;
-      padding: 32px 28px;
+    .intro {
+      position: static;
+      height: auto;
+      padding: 48px 24px 40px;
       border-right: none;
-      border-top: none;
       border-bottom: 1px solid var(--border-light);
-      transition: none;
+      gap: 32px;
     }
 
-    .panel:last-child { border-bottom: none; }
-    .panel:hover { flex: none; }
-    .panel-num { top: 28px; left: 28px; }
-    .panel-label-vert { display: none; }
+    .intro-label { margin-bottom: 24px; }
+    .intro-name { font-size: 52px; }
+
+    .panel {
+      min-height: 280px;
+      padding: 80px 24px 32px;
+    }
+
+    .panel-num { top: 28px; left: 24px; }
     .panel-title { font-size: 24px; }
     .panel-desc { display: none; }
-    .consulting-stat, .terminal-line, .blog-date, .blog-text, .creating-label { top: 28px; right: 28px; }
-    .hub-header { padding: 0 24px; }
-    .panel-promptlab { border-bottom-color: rgba(26,26,24,0.12); }
-    .panel-creating { border-bottom-color: rgba(140,123,107,0.2); flex: 1 !important; }
+    .consulting-stat, .terminal-line, .blog-text, .creating-label, .reviews-stars { top: 28px; right: 24px; }
+    .panel-divider { left: 24px; right: 24px; }
   }
 </style>
 </head>
 <body>
 
-<header class="hub-header">
-  <div class="hub-logo"><span>Walter</span> Colindres</div>
-  <a href="about.html" class="hub-tagline" style="text-decoration:none; transition: color 0.2s;" onmouseover="this.style.color='var(--white)'" onmouseout="this.style.color=''">ABOUT ME</a>
+<div class="hub">
+
+<!-- INTRO — left column -->
+<header class="intro">
+  <div>
+    <div class="intro-label">Product leader · Builder · Creator</div>
+    <h1 class="intro-name"><span>Walter</span>Colindres</h1>
+    <p class="intro-tagline">This is the hub for everything I'm working on: consulting, experiments, writing, and making things.</p>
+  </div>
+  <a href="about.html" class="intro-about">About me →</a>
 </header>
 
-<!-- PANELS -->
-<div class="panels">
-<div class="panels-top">
+<!-- PANELS — right column -->
+<main class="panels">
 
 <!-- PANEL 1 — CONSULTING -->
 <a href="https://consulting.waltercolindres.com" class="panel panel-consulting">
-  <div class="panel-num">01 / 04</div>
+  <div class="panel-num">01 / 05</div>
   <div class="consulting-stat">
     <!-- <div class="consulting-stat-num">$1B+</div> -->
     <div class="consulting-stat-label">Driving Digital sales</div>
@@ -603,7 +613,7 @@
 
 <!-- PANEL 2 — PROMPT LAB -->
 <a href="https://experimenting.waltercolindres.com" class="panel panel-promptlab">
-  <div class="panel-num">02 / 04</div>
+  <div class="panel-num">02 / 05</div>
   <div class="terminal-line">prompt-lab v2.0</div>
   <div class="panel-content">
     <div class="panel-tag">Experimenting</div>
@@ -616,7 +626,7 @@
 
 <!-- PANEL 3 — BLOG -->
 <a href="https://waltercolindres.notion.site/Hi-I-m-Walter-2cdcb92ed7e94387bafef9fb503a70c7" class="panel panel-blog">
-  <div class="panel-num">03 / 04</div>
+  <div class="panel-num">03 / 05</div>
   <div class="blog-text">Stream of Consciousness</div>
   <div class="panel-content">
     <div class="panel-tag">Writing</div>
@@ -627,11 +637,9 @@
   <div class="panel-divider"></div>
 </a>
 
-</div><!-- /panels-top -->
-
 <!-- PANEL 4 — CREATING -->
 <div class="panel panel-creating">
-  <div class="panel-num">04 / 04</div>
+  <div class="panel-num">04 / 05</div>
   <div class="creating-label">painter · charcoal · digital</div>
   <div class="panel-content">
     <div class="panel-tag">Creating</div>
@@ -642,7 +650,22 @@
   <div class="panel-divider"></div>
 </div>
 
-</div><!-- /panels -->
+<!-- PANEL 5 — APP REVIEWS -->
+<div class="panel panel-reviews">
+  <div class="panel-num">05 / 05</div>
+  <div class="reviews-stars">★★★★☆</div>
+  <div class="panel-content">
+    <div class="panel-tag">App Reviews</div>
+    <h2 class="panel-title">What the app store<br>is <em>really saying.</em></h2>
+    <p class="panel-desc">Teardowns of real app reviews — what customers love, what they hate, and what product teams should hear.</p>
+    <div class="panel-cta">Coming soon</div>
+  </div>
+  <div class="panel-divider"></div>
+</div>
+
+</main><!-- /panels -->
+
+</div><!-- /hub -->
 
 </body>
 </html>
