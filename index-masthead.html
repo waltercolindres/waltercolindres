@@ -164,13 +164,18 @@
   }
 
   /* Hover: row turns black, full width of the column */
-  .entry { isolation: isolate; }
+  .entry {
+    isolation: isolate;
+    --row-bg: var(--ink);
+    --row-ink: var(--white);
+    --row-muted: rgba(250,250,247,0.55);
+  }
 
   .entry::before {
     content: '';
     position: absolute;
     inset: -1px -56px;
-    background: var(--ink);
+    background: var(--row-bg);
     opacity: 0;
     z-index: -1;
     transition: opacity 0.25s;
@@ -180,10 +185,10 @@
   .entry:focus-visible::before { opacity: 1; }
 
   .entry:hover .entry-name,
-  .entry:focus-visible .entry-name { color: var(--white); }
+  .entry:focus-visible .entry-name { color: var(--row-ink); }
 
   .entry:hover .entry-aside,
-  .entry:focus-visible .entry-aside { color: rgba(250,250,247,0.55); }
+  .entry:focus-visible .entry-aside { color: var(--row-muted); }
 
   .entry-name em { color: var(--em); transition: color 0.25s; }
 
@@ -242,7 +247,12 @@
   .entry-consulting .entry-name { font-family: 'Playfair Display', serif; font-weight: 400; }
   .entry-consulting .entry-name em { font-style: normal; }
 
-  .entry-promptlab { --hue: var(--rust); }
+  .entry-promptlab {
+    --hue: var(--rust);
+    --row-bg: #f0ede6;
+    --row-ink: #1a1a18;
+    --row-muted: rgba(26,26,24,0.55);
+  }
   .entry-promptlab .entry-name { font-family: 'Playfair Display', serif; font-weight: 900; letter-spacing: -0.02em; }
   .entry-promptlab .entry-name em { font-style: normal; }
   .entry-promptlab .entry-aside { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
@@ -262,7 +272,12 @@
   .entry-notes .entry-name { font-family: 'DM Sans', sans-serif; font-weight: 400; letter-spacing: -0.03em; }
   .entry-notes .entry-name em { font-family: 'Playfair Display', serif; font-style: normal; }
 
-  .entry-creating { --hue: var(--bronze); }
+  .entry-creating {
+    --hue: var(--bronze);
+    --row-bg: #f5f0ea;
+    --row-ink: #2c2418;
+    --row-muted: rgba(44,36,24,0.55);
+  }
   .entry-creating .entry-name {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
