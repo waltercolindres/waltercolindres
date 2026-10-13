@@ -72,21 +72,23 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 48px 56px;
-    border-right: 1px solid var(--border-light);
+    background: #ffffff;
+    color: #0a0a0a;
   }
 
   .intro-name {
     font-family: 'Outfit', sans-serif;
     font-weight: 300;
-    font-size: clamp(48px, 5.6vw, 96px);
+    font-size: clamp(44px, 4.8vw, 84px);
     line-height: 0.95;
-    letter-spacing: -0.03em;
-    color: rgba(250,250,247,0.45);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: rgba(10,10,10,0.4);
   }
 
   .intro-name span {
     display: block;
-    color: var(--white);
+    color: #0a0a0a;
   }
 
   .intro-tagline {
@@ -94,7 +96,7 @@
     max-width: 340px;
     font-size: 14px;
     line-height: 1.7;
-    color: rgba(250,250,247,0.45);
+    color: rgba(10,10,10,0.55);
   }
 
   .intro-label {
@@ -103,7 +105,7 @@
     font-weight: 700;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: rgba(250,250,247,0.3);
+    color: rgba(10,10,10,0.4);
     margin-bottom: 40px;
   }
 
@@ -116,12 +118,12 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(250,250,247,0.5);
+    color: rgba(10,10,10,0.55);
     text-decoration: none;
     transition: color 0.2s, gap 0.2s;
   }
 
-  .intro-about:hover { color: var(--white); gap: 16px; }
+  .intro-about:hover { color: #0a0a0a; gap: 16px; }
 
   /* PANELS — vertical list */
   .panels {
@@ -561,13 +563,11 @@
       position: static;
       height: auto;
       padding: 48px 24px 40px;
-      border-right: none;
-      border-bottom: 1px solid var(--border-light);
       gap: 32px;
     }
 
     .intro-label { margin-bottom: 24px; }
-    .intro-name { font-size: 52px; }
+    .intro-name { font-size: 48px; }
 
     .panels { min-height: 0; }
 
