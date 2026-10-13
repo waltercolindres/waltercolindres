@@ -151,12 +151,28 @@
 
   .entry:last-child { border-bottom: 3px solid var(--white); }
 
+  /* Black & white by default — each section's color appears on hover */
+  .entry {
+    --accent: rgba(250,250,247,0.55);
+    --em: var(--white);
+    outline: none;
+  }
+
+  .entry:hover,
+  .entry:focus-visible {
+    --accent: var(--hue);
+    --em: var(--hue);
+  }
+
+  .entry-name em { color: var(--em); transition: color 0.25s; }
+
   .entry-num {
     font-family: 'Syne', sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.2em;
     color: var(--accent);
+    transition: color 0.25s;
   }
 
   .entry-name {
@@ -184,6 +200,7 @@
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--accent);
+    transition: color 0.25s;
   }
 
   .entry-cta {
@@ -193,36 +210,36 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--accent);
-    transition: letter-spacing 0.2s;
+    transition: color 0.25s, letter-spacing 0.2s;
   }
 
   a.entry:hover .entry-cta { letter-spacing: 0.25em; }
-  .entry-soon .entry-cta { color: var(--muted); }
 
   /* Per-entry fonts — carried over from the original cards */
-  .entry-consulting { --accent: var(--red); }
+  .entry-consulting { --hue: var(--red); }
   .entry-consulting .entry-name { font-family: 'Playfair Display', serif; font-weight: 400; }
-  .entry-consulting .entry-name em { font-style: normal; color: var(--red); }
+  .entry-consulting .entry-name em { font-style: normal; }
 
-  .entry-promptlab { --accent: var(--rust); }
+  .entry-promptlab { --hue: var(--rust); }
   .entry-promptlab .entry-name { font-family: 'Playfair Display', serif; font-weight: 900; letter-spacing: -0.02em; }
-  .entry-promptlab .entry-name em { font-style: normal; color: var(--rust); }
+  .entry-promptlab .entry-name em { font-style: normal; }
   .entry-promptlab .entry-aside { font-family: 'JetBrains Mono', monospace; font-size: 11px; }
   .cursor {
     display: inline-block;
     width: 0.16em;
     height: 0.8em;
     margin-left: 4px;
-    background: var(--rust);
+    background: var(--em);
+    transition: background 0.25s;
     animation: blink 1.1s step-end infinite;
   }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-  .entry-writing { --accent: var(--pink); }
+  .entry-writing { --hue: var(--pink); }
   .entry-writing .entry-name { font-family: 'Instrument Serif', serif; font-style: italic; }
-  .entry-writing a.entry:hover .entry-name, a.entry-writing:hover .entry-name { color: var(--pink); }
+  .entry-writing:hover .entry-name, .entry-writing:focus-visible .entry-name { color: var(--hue); }
 
-  .entry-creating { --accent: var(--bronze); }
+  .entry-creating { --hue: var(--bronze); }
   .entry-creating .entry-name {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
@@ -230,12 +247,12 @@
     letter-spacing: 0.2em;
     font-size: clamp(26px, 3vw, 48px);
   }
-  .entry-creating .entry-name em { font-style: normal; font-weight: 300; color: var(--bronze); }
+  .entry-creating .entry-name em { font-style: normal; font-weight: 300; }
 
-  .entry-reviews { --accent: var(--amber); }
+  .entry-reviews { --hue: var(--amber); }
   .entry-stars { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; }
   .entry-reviews .entry-name { font-family: 'DM Sans', sans-serif; font-weight: 300; letter-spacing: -0.02em; }
-  .entry-reviews .entry-name em { font-family: 'Instrument Serif', serif; color: var(--amber); }
+  .entry-reviews .entry-name em { font-family: 'Instrument Serif', serif; }
 
   /* MOBILE */
   @media (max-width: 860px) {
