@@ -14,9 +14,11 @@
 <meta property="og:title" content="Walter Colindres">
 <meta property="og:description" content="Husband, father, first-generation Nicaraguan-American, and product leader. This is my story.">
 <meta property="og:site_name" content="Walter Colindres">
+<meta property="og:image" content="https://waltercolindres.com/images/walter-colindres.jpg">
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://waltercolindres.com/images/walter-colindres.jpg">
 <meta name="twitter:url" content="https://waltercolindres.com/about">
 <meta name="twitter:title" content="Walter Colindres">
 <meta name="twitter:description" content="Husband, father, first-generation Nicaraguan-American, and product leader. This is my story.">
@@ -143,6 +145,9 @@
     letter-spacing: -0.03em;
     margin: 48px 0 28px;
   }
+
+  .hero-body { display: grid; grid-template-columns: 1fr 240px; gap: 48px; align-items: end; }
+  .about-photo { width: 240px; height: 240px; border-radius: 50%; object-fit: cover; border: 1px solid var(--rule); }
 
   .hero-headline em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
 
@@ -333,6 +338,8 @@
     .intro-label { margin-bottom: 24px; }
     .intro-name { font-size: 48px; }
     .about-body { padding: 40px 24px 64px; border-left: none; }
+    .hero-body { grid-template-columns: 1fr; gap: 0; }
+    .about-photo { width: 140px; height: 140px; order: -1; margin-top: 40px; }
     .timeline-item { grid-template-columns: 1fr; gap: 12px; }
     .making-item { grid-template-columns: 32px 1fr; row-gap: 6px; }
     .making-desc { grid-column: 2; }
@@ -356,8 +363,13 @@
 
   <div class="hero">
     <div class="masthead-top">About <span>Walter Colindres</span></div>
-    <h2 class="hero-headline">Husband. Father. <em>Builder.</em></h2>
-    <p class="hero-lead">Before any title I've held or product I've shipped, those three words are the ones that matter most to me. Everything else is built on top of them.</p>
+    <div class="hero-body">
+      <div>
+        <h2 class="hero-headline">Husband. Father. <em>Builder.</em></h2>
+        <p class="hero-lead">Before any title I've held or product I've shipped, those three words are the ones that matter most to me. Everything else is built on top of them.</p>
+      </div>
+      <img class="about-photo" src="images/walter-colindres.webp" alt="Walter Colindres, wearing glasses and a dark t-shirt, in front of a brick wall" width="400" height="400" fetchpriority="high" decoding="async">
+    </div>
   </div>
 
   <!-- PERSONAL -->
