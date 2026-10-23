@@ -191,6 +191,8 @@
   .prose p { margin-bottom: 22px; }
   .prose p:last-child { margin-bottom: 0; }
   .prose strong { color: var(--ink); font-weight: 500; }
+  .prose a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: 4px; transition: color 0.2s; }
+  .prose a:hover { color: var(--red); }
   .prose em { font-family: 'Instrument Serif', serif; font-style: italic; color: var(--ink); font-size: 1.08em; }
 
   .pull-quote {
@@ -205,18 +207,8 @@
     max-width: 620px;
   }
 
-  /* CAREER — rows that turn black on hover, like the homepage list */
-  .timeline-item {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 40px;
-    padding: 32px 0;
-    border-top: 1px solid var(--rule);
-    position: relative;
-    isolation: isolate;
-  }
-
-  .timeline-item::before, .making-item::before {
+  /* MAKING THINGS — rows that turn black on hover, like the homepage list */
+  .making-item::before {
     content: '';
     position: absolute;
     inset: -1px -56px;
@@ -226,47 +218,7 @@
     transition: opacity 0.25s;
   }
 
-  .timeline-item:hover::before, .making-item:hover::before { opacity: 1; }
-
-  .timeline-company {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1.2;
-    margin-bottom: 8px;
-    transition: color 0.25s;
-  }
-
-  .timeline-role {
-    font-family: 'Syne', sans-serif;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    line-height: 1.8;
-    transition: color 0.25s;
-  }
-
-  .timeline-desc { font-size: 14px; color: var(--body); line-height: 1.8; transition: color 0.25s; }
-
-  .timeline-stats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-
-  .stat-pill {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    color: var(--ink);
-    border: 1px solid var(--rule);
-    padding: 4px 10px;
-    white-space: nowrap;
-    transition: color 0.25s, border-color 0.25s;
-  }
-
-  .timeline-item:hover .timeline-company { color: var(--white); }
-  .timeline-item:hover .timeline-role { color: var(--red); }
-  .timeline-item:hover .timeline-desc { color: rgba(250,250,247,0.6); }
-  .timeline-item:hover .stat-pill { color: var(--red); border-color: rgba(232,22,42,0.45); }
+  .making-item:hover::before { opacity: 1; }
 
   /* MAKING THINGS — icon list */
   .making-grid { margin-top: 40px; }
@@ -340,10 +292,9 @@
     .about-body { padding: 40px 24px 64px; border-left: none; }
     .hero-body { grid-template-columns: 1fr; gap: 0; }
     .about-photo { width: 140px; height: 140px; order: -1; margin-top: 40px; }
-    .timeline-item { grid-template-columns: 1fr; gap: 12px; }
     .making-item { grid-template-columns: 32px 1fr; row-gap: 6px; }
     .making-desc { grid-column: 2; }
-    .timeline-item::before, .making-item::before { inset: -1px -24px; }
+    .making-item::before { inset: -1px -24px; }
   }
 </style>
 </head>
@@ -393,84 +344,13 @@
       <p>I am, genuinely, a <em>unicorn</em> in the tech world. I am a designer, a front-end developer, and a product manager — all three, at the same time, for real. That combination is rare, and I've spent my career leaning into it rather than picking a lane.</p>
       <p>I've spent over a decade in <strong>digital transformation and e-commerce</strong> — building the apps, platforms, and systems that millions of people interact with every day, mostly without ever knowing my name. That's the job. You succeed when the product gets out of the way and just works.</p>
       <p>What drives me is solving complex experience problems with <strong>great design and real technology</strong>, and doing it alongside people I can learn from — and mentor in return. Some of the most meaningful work I've done hasn't shipped a feature. It's helped someone else find their footing as a product leader.</p>
-    </div>
-  </div>
-
-  <!-- CAREER -->
-  <div class="section-wide">
-    <div class="section-label"><span class="section-num">03</span>Where I've been</div>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-        <div class="timeline-left">
-          <div class="timeline-company">Jack in the Box</div>
-          <div class="timeline-role">Senior Director of Product &amp; Digital<br>Current</div>
-        </div>
-        <div class="timeline-right">
-          <p class="timeline-desc">I own the full guest-facing digital stack — iOS, Android, web — alongside back-of-house systems including order management, fraud detection, and enterprise tooling. I rebuilt what was broken, shipped what mattered, and am building a team and culture that will outlast any single feature.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-left">
-          <div class="timeline-company">VistaPrint (Vista)</div>
-          <div class="timeline-role">Director of Product<br>Growth & Retention</div>
-        </div>
-        <div class="timeline-right">
-          <p class="timeline-desc">Led the Growth & Retention portfolio, owning the strategies and systems that kept millions of small business customers coming back. This is where I sharpened my thinking on lifecycle, loyalty, and what it really means to earn a customer's long-term trust.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-left">
-          <div class="timeline-company">The Walt Disney Company</div>
-          <div class="timeline-role">Product Manager<br>Next Generation Storytelling</div>
-        </div>
-        <div class="timeline-right">
-          <p class="timeline-desc">One of the most creatively ambitious roles of my career. I worked on Next Generation Storytelling (NGS), leading the Metaverse Rewards System — an early and genuine exploration of connected, cross-platform identity and rewards inside one of the world's most beloved brands.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-left">
-          <div class="timeline-company">Restaurant Brands International</div>
-          <div class="timeline-role">Sr. Product Manager<br>Shared Experience Platform</div>
-        </div>
-        <div class="timeline-right">
-          <p class="timeline-desc">One of the most intense and rewarding runs of my career. I launched 15 ordering platforms in 6 months across web, native apps, and kiosk — spanning Burger King, Popeyes, and Tim Hortons. Fifty-plus features shipped in a year. The kind of pace that either breaks you or defines you.</p>
-          <div class="timeline-stats">
-            <span class="stat-pill">+300% delivery conversion</span>
-            <span class="stat-pill">+150% pick-up conversion</span>
-            <span class="stat-pill">+330% returning user frequency</span>
-            <span class="stat-pill">15 platforms in 6 months</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-left">
-          <div class="timeline-company">Sonic Drive-In</div>
-          <div class="timeline-role">Sr. Product Manager<br>Front-End Engineer</div>
-        </div>
-        <div class="timeline-right">
-          <p class="timeline-desc">I wore every hat. Led the web discipline, served as technical lead across web, email, SMS, and internal tooling, and drove best practices in accessibility and system architecture. I built and shipped the MySonic experience end-to-end — rewards, e-commerce, SSO, and the Digital Menu Manager that powered Order Ahead at national scale.</p>
-          <div class="timeline-stats">
-            <span class="stat-pill">380M+ site views</span>
-            <span class="stat-pill">43M+ users</span>
-            <span class="stat-pill">99.9%+ uptime</span>
-            <span class="stat-pill">$3M+ in LFL donations</span>
-            <span class="stat-pill">2M+ votes enabled</span>
-          </div>
-        </div>
-      </div>
-
+      <p>For the roles and the work behind them, see <a href="https://consulting.waltercolindres.com/about">my work history</a> and <a href="https://consulting.waltercolindres.com/case-studies">case studies</a> on my consulting site.</p>
     </div>
   </div>
 
   <!-- MAKING THINGS -->
   <div class="section-wide">
-    <div class="section-label"><span class="section-num">04</span>When I'm not shipping product</div>
+    <div class="section-label"><span class="section-num">03</span>When I'm not shipping product</div>
     <div class="prose">
       <p>I make things with my hands. Always have. It's how I decompress, how I stay creative, and honestly — it's where some of my best product thinking happens. The overlap between craft and design is real, and I've never been able to fully separate them.</p>
     </div>
