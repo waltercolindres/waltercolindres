@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/about", "destination": "https://consulting.waltercolindres.com/about", "permanent": true },
+    { "source": "/about.html", "destination": "https://consulting.waltercolindres.com/about", "permanent": true }
+  ]
+}
