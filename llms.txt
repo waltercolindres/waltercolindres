@@ -1,0 +1,14 @@
+# Walter Colindres
+
+> Walter Colindres is a product leader, builder and digital product consultant who has spent 15+ years launching ordering, loyalty and AI-powered experiences for consumer brands. This is the hub for his sites.
+
+## Sites
+
+- [Consulting](https://consulting.waltercolindres.com): case studies, services and how to work with Walter ([llms.txt](https://consulting.waltercolindres.com/llms.txt))
+- [Notes](https://notes.waltercolindres.com): writing on product leadership, leading teams and building with AI ([llms.txt](https://notes.waltercolindres.com/llms.txt))
+- [Experimenting](https://experimenting.waltercolindres.com): experiments and side projects
+- [About](https://consulting.waltercolindres.com/about): background and work history
+
+## Elsewhere
+
+- [LinkedIn](https://www.linkedin.com/in/waltercolindres)
